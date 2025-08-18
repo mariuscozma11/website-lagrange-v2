@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-mask {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--color-card) 5%, var(--color-card) 95%, rgba(255,255,255,0) 100%);
+}
+
+:root.dark .marquee-mask {
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(--card) 5%, var(--card) 95%, rgba(0,0,0,0) 100%);
+}

@@ -15,32 +15,44 @@ export default function Footer() {
     <footer className="w-full border-t border-gray-200/60 dark:border-white/10 bg-white/70 dark:bg-transparent backdrop-blur-sm">
       <div className="mx-auto w-full max-w-[1440px] px-6 py-12">
         <div className="grid gap-10 md:grid-cols-4">
-          {/* Company */}
-          <div className="space-y-3">
-            <h3 className="text-base font-semibold text-gray-900 dark:text-white">Lagrange Engineering SRL</h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">CUI 51196824</p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              Jud. Timiş, Municipiul Timişoara,
-              <br />
-              Strada Ioan Alexandru, Nr. 20,
-              <br />
-              Etaj POD, Ap. POD 2
-            </p>
-          </div>
-
-          {/* Contact */}
-          <div className="space-y-3">
-            <h3 className="text-base font-semibold text-gray-900 dark:text-white">Contact</h3>
-            <p>
-              <Link href="mailto:office@lagrangeengineering.ro" className="text-sm text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
-                office@lagrangeengineering.ro
-              </Link>
-            </p>
-            <p>
-              <Link href="tel:+40756109881" className="text-sm text-gray-800 hover:text-emerald-800 dark:text-gray-300 dark:hover:text-emerald-300">
-                +40 756 109 881
-              </Link>
-            </p>
+          {/* Company + Contact (combined) */}
+          <div className="md:col-span-2">
+            <div className="flex items-start gap-4">
+              {/* Theme-aware logo */}
+              <div className="mt-1 shrink-0">
+                <Image
+                  src="/lg-black.svg"
+                  alt="Lagrange Engineering logo"
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 dark:hidden"
+                />
+                <Image
+                  src="/lg-white.svg"
+                  alt="Lagrange Engineering logo"
+                  width={48}
+                  height={48}
+                  className="hidden h-12 w-12 dark:block"
+                />
+              </div>
+              <div className="space-y-1 text-sm">
+                <p className="font-semibold text-gray-900 dark:text-white">Lagrange Engineering SRL</p>
+                <p className="text-gray-700 dark:text-gray-300">Jud. Timiş, Municipiul Timişoara</p>
+                <p className="text-gray-700 dark:text-gray-300">Str. Ioan Alexandru, Nr. 20, Etaj POD, Ap. POD 2</p>
+                <p>
+                  <Link href="mailto:office@lagrangeengineering.ro" className="text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
+                    office@lagrangeengineering.ro
+                  </Link>
+                </p>
+                <p>
+                  <Link href="tel:+40756109881" className="text-gray-800 hover:text-emerald-800 dark:text-gray-300 dark:hover:text-emerald-300">
+                    +40 756 109 881
+                  </Link>
+                </p>
+                <p className="text-gray-700 dark:text-gray-300">CUI 51196824</p>
+                <p className="text-gray-700 dark:text-gray-300">J20505646004</p>
+              </div>
+            </div>
           </div>
 
           {/* Navigation */}
