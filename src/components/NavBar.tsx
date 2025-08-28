@@ -1,20 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
-// Navigation items array
-const navItems = [
-  { name: 'Acasă', link: '/' },
-  { name: 'Servicii', link: '/servicii' },
-  { name: 'Despre', link: '/despre' },
-  { name: 'Portofoliu', link: '/portofoliu' },
-  { name: 'Contact', link: '/contact' }
-];
-
 export default function NavBar() {
+  const { t, language } = useLanguage();
+  
+  // Navigation items array with translations - recalculated when language changes
+  const navItems = React.useMemo(() => [
+    { name: t('nav.home'), link: `/${language}` },
+    { name: t('nav.services'), link: `/${language}/services` },
+    { name: t('nav.about'), link: `/${language}/about` },
+    { name: t('nav.portfolio'), link: `/${language}/portfolio` },
+    { name: t('nav.contact'), link: `/${language}/contact` }
+  ], [t, language]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -76,11 +79,12 @@ export default function NavBar() {
         </ul>
         
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
           <Link
-            href="/contact"
+            href={`/${language}/contact`}
             className="rounded-md bg-emerald-500 hover:bg-emerald-600 transition-colors px-4 py-2 text-white"
           >
-            Cere oferta
+            {t('common.cta')}
           </Link>
           <ThemeToggle />
         </div>
@@ -115,6 +119,7 @@ export default function NavBar() {
           </Link>
           
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <ThemeToggle />
             {/* Animated Hamburger Button */}
             <button
@@ -169,11 +174,11 @@ export default function NavBar() {
               {/* Divider */}
               <div className="border-t border-gray-200/50 dark:border-slate-700/50 pt-4">
                 <Link
-                  href="/contact"
+                  href={`/${language}/contact`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-4 text-center font-bold text-white hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  Cere oferta
+                  {t('common.cta')}
                 </Link>
               </div>
             </div>

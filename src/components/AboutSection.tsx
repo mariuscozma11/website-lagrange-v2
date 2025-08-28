@@ -25,7 +25,7 @@ export default function AboutSection() {
       <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
         {/* Left: Content */}
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+          <h2 className=" text-gray-900 dark:text-white md:text-4xl">
             Despre Lagrange Engineering
           </h2>
           <p className="text-base text-gray-700 dark:text-gray-300">

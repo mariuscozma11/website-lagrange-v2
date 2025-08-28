@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 max-w-site">
       <h1 className="text-3xl font-bold mb-6">Contactează-ne</h1>
       <p className="text-lg text-gray-700">
         Conținutul paginii de contact va fi adăugat aici.

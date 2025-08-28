@@ -1,15 +1,22 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
-  const navItems = [
-    { name: "Acasă", link: "/" },
-    { name: "Servicii", link: "/servicii" },
-    { name: "Despre", link: "/despre" },
-    { name: "Portofoliu", link: "/portofoliu" },
-    { name: "Contact", link: "/contact" },
-  ];
+  
+  // Navigation items array with translations - recalculated when language changes
+  const navItems = React.useMemo(() => [
+    { name: t('nav.home'), link: `/${language}` },
+    { name: t('nav.services'), link: `/${language}/services` },
+    { name: t('nav.about'), link: `/${language}/about` },
+    { name: t('nav.portfolio'), link: `/${language}/portfolio` },
+    { name: t('nav.contact'), link: `/${language}/contact` },
+  ], [t, language]);
 
   return (
     <footer className="w-full border-t border-gray-200/60 dark:border-white/10 bg-white/70 dark:bg-transparent backdrop-blur-sm">
@@ -56,8 +63,10 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <nav aria-label="Navigație" className="space-y-3">
-            <h3 className="text-base font-semibold text-gray-900 dark:text-white">Navigație</h3>
+          <nav aria-label={t('nav.home')} className="space-y-3">
+            <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+              {language === 'en' ? 'Navigation' : 'Navigație'}
+            </h3>
             <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -71,16 +80,18 @@ export default function Footer() {
 
           {/* Legal */}
           <div className="space-y-3">
-            <h3 className="text-base font-semibold text-gray-900 dark:text-white">Legal</h3>
+            <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+              {language === 'en' ? 'Legal' : 'Legal'}
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/termeni-si-conditii" className="text-sm text-gray-700 hover:text-emerald-700 dark:text-gray-300 dark:hover:text-emerald-400">
-                  Termeni și condiții
+                <Link href={`/${language}/termeni-si-conditii`} className="text-sm text-gray-700 hover:text-emerald-700 dark:text-gray-300 dark:hover:text-emerald-400">
+                  {t('footer.terms')}
                 </Link>
               </li>
               <li>
-                <Link href="/politica-cookies" className="text-sm text-gray-700 hover:text-emerald-700 dark:text-gray-300 dark:hover:text-emerald-400">
-                  Politica Cookies
+                <Link href={`/${language}/politica-cookies`} className="text-sm text-gray-700 hover:text-emerald-700 dark:text-gray-300 dark:hover:text-emerald-400">
+                  {t('footer.cookies')}
                 </Link>
               </li>
             </ul>
@@ -111,7 +122,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            © {currentYear} Lagrange Engineering. Toate drepturile rezervate.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>
