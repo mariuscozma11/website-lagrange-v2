@@ -71,7 +71,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-site">
       <h1 className="text-3xl font-bold mb-6">{content.pageTitle}</h1>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+      <p className="text-lg text-gray-700 dark:text-gray-300">
         {content.content}
       </p>
     </div>

@@ -7,7 +7,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
   const { t, language } = useLanguage();
-  const currentYear = new Date().getFullYear();
   
   // Navigation items array with translations - recalculated when language changes
   const navItems = React.useMemo(() => [
