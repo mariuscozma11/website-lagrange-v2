@@ -374,6 +374,7 @@ export default function ContactForm() {
                     <option value="mobile">{language === 'en' ? 'Mobile & Cross-Platform Apps' : 'Aplicații Mobile & Cross-Platform'}</option>
                     <option value="automation">{language === 'en' ? 'Digitalization & Automation' : 'Digitalizare & Automatizare'}</option>
                     <option value="consulting">{language === 'en' ? 'Consulting & Technical Guidance' : 'Consultanță & Îndrumare Tehnică'}</option>
+                    <option value="other">{language === 'en' ? 'Other' : 'Altele'}</option>
                   </select>
                 </div>
 
