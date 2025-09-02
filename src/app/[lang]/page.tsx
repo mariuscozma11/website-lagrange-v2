@@ -1,6 +1,7 @@
 import HeroSectionOne from "@/components/hero-section-demo-1";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import HomeContent from "./home-content";
 
 // Define supported languages
 const supportedLanguages = ["en", "ro"] as const;
@@ -67,7 +68,7 @@ export default async function HomePage({ params }: HomePageProps) {
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-site">
         {/* Home page content removed - ready for custom UI library implementation */}
-        <HeroSectionOne />
+        <HomeContent />
       </div>
     </div>
   );

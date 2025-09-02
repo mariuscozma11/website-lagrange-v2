@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function HeroSectionOne() {
   const { language } = useLanguage();
@@ -84,12 +85,16 @@ export default function HeroSectionOne() {
           }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <Button className="w-60 transform rounded-md bg-emerald-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700">
-            {currentContent.primaryButton}
-          </Button>
-          <Button className="w-60 transform rounded-md border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
-            {currentContent.secondaryButton}
-          </Button>
+          <Link href={`/${language}/contact`}>
+            <Button className="w-60 transform rounded-md bg-emerald-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700">
+              {currentContent.primaryButton}
+            </Button>
+          </Link>
+          <Link href={`/${language}/contact`}>
+            <Button className="w-60 transform rounded-md border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
+              {currentContent.secondaryButton}
+            </Button>
+          </Link>
         </motion.div>
         <motion.div
           initial={{
@@ -108,7 +113,7 @@ export default function HeroSectionOne() {
         >
           <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
             <img
-              src="hero-illustration.svg"
+              src="/hero-illustration.svg"
               alt="Landing page preview"
               className="aspect-[16/9] h-auto w-full object-fill"
               height={1000}

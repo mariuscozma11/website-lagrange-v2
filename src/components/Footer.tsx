@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           {/* Company + Contact (combined) */}
           <div className="md:col-span-2">
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col items-start gap-4 md:flex-row md:items-start">
               {/* Theme-aware logo */}
               <div className="mt-1 shrink-0">
                 <Image

@@ -115,7 +115,7 @@ export default function NavBar() {
             height={40}
             className="hidden dark:block flex-shrink-0"
           />
-            <span className="font-medium text-gray-900 dark:text-white flex-shrink-0">Lagrange Engineering</span>
+            <span className="hidden sm:block font-medium text-gray-900 dark:text-white flex-shrink-0">Lagrange Engineering</span>
           </Link>
           
           <div className="flex items-center gap-3">
