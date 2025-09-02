@@ -5,27 +5,21 @@ import { notFound } from "next/navigation";
 const supportedLanguages = ["en", "ro"] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
-// Language-specific content
+// Minimal content for metadata only
 const contentByLang: Record<SupportedLanguage, {
   title: string;
   description: string;
   keywords: string;
-  pageTitle: string;
-  content: string;
 }> = {
   en: {
     title: "Privacy Policy - Lagrange Engineering",
     description: "Privacy policy of Lagrange Engineering SRL",
     keywords: "privacy policy, Lagrange Engineering, data protection",
-    pageTitle: "Privacy Policy",
-    content: "Content will be added here.",
   },
   ro: {
     title: "Politica de Confidențialitate - Lagrange Engineering",
     description: "Politica de confidențialitate a Lagrange Engineering SRL",
     keywords: "politica confidențialitate, Lagrange Engineering, protecția datelor",
-    pageTitle: "Politica de Confidențialitate",
-    content: "Conținutul va fi adăugat aici.",
   },
 };
 
@@ -59,10 +53,9 @@ export default async function PrivacyPolicyPage({ params }: PrivacyPolicyPagePro
   const content = contentByLang[lang];
   
   return (
-    <div className="container mx-auto px-8 max-w-site">
-      <h1 className="text-3xl font-bold mb-6">{content.pageTitle}</h1>
-      <div className="prose max-w-none">
-        <p>{content.content}</p>
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-8 max-w-site">
+        {/* Privacy policy content removed - ready for custom UI library implementation */}
       </div>
     </div>
   );

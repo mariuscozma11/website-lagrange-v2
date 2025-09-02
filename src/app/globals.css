@@ -119,6 +119,19 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Global caret color and selection styles */
+  :root {
+    caret-color: theme(colors.emerald.500);
+  }
+  ::selection {
+    background-color: theme(colors.emerald.500);
+    color: theme(colors.white);
+  }
+  /* For Firefox */
+  ::-moz-selection {
+    background-color: theme(colors.emerald.500);
+    color: theme(colors.white);
+  }
 }
 
 /* Marquee animation */

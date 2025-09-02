@@ -5,15 +5,13 @@ import { notFound } from "next/navigation";
 const supportedLanguages = ["en", "ro"] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
-// Language-specific content
+// Minimal content for metadata only
 const contentByLang: Record<SupportedLanguage, {
   title: string;
   description: string;
   keywords: string;
   openGraphTitle: string;
   openGraphDescription: string;
-  pageTitle: string;
-  content: string;
 }> = {
   en: {
     title: "Portfolio - Lagrange Engineering | Projects and Work Completed",
@@ -21,8 +19,6 @@ const contentByLang: Record<SupportedLanguage, {
     keywords: "portfolio web projects, applications completed, Lagrange Engineering work, technology projects Romania",
     openGraphTitle: "Portfolio - Lagrange Engineering | Projects and Work Completed",
     openGraphDescription: "Explore our portfolio of web projects and custom applications. Lagrange Engineering has created digital solutions for various companies in Romania.",
-    pageTitle: "Our Portfolio",
-    content: "Content will be added here.",
   },
   ro: {
     title: "Portofoliu - Lagrange Engineering | Proiecte și Lucrări Realizate",
@@ -30,8 +26,6 @@ const contentByLang: Record<SupportedLanguage, {
     keywords: "portofoliu proiecte web, aplicații realizate, lucrări Lagrange Engineering, proiecte tehnologie România",
     openGraphTitle: "Portofoliu - Lagrange Engineering | Proiecte și Lucrări Realizate",
     openGraphDescription: "Explorează portofoliul nostru de proiecte web și aplicații personalizate. Lagrange Engineering a realizat soluții digitale pentru diverse companii din România.",
-    pageTitle: "Portofoliul Nostru",
-    content: "Conținutul va fi adăugat aici.",
   },
 };
 
@@ -69,11 +63,10 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
   const content = contentByLang[lang];
   
   return (
-    <div className="container mx-auto px-4 py-8 max-w-site">
-      <h1 className="text-3xl font-bold mb-6">{content.pageTitle}</h1>
-      <p className="text-lg text-gray-700 dark:text-gray-300">
-        {content.content}
-      </p>
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-8 max-w-site">
+        {/* Portfolio page content removed - ready for custom UI library implementation */}
+      </div>
     </div>
   );
 } 
