@@ -156,7 +156,6 @@ export default function ContactForm() {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <CardDescription className="text-base text-neutral-600 dark:text-neutral-400">
-                  {currentContent.subtitle}
                 </CardDescription>
               </motion.div>
             </CardHeader>

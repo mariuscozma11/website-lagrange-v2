@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import PageHeader from "@/components/PageHeader";
+import ContactContent from "./contact-content";
 
 // Define supported languages
 const supportedLanguages = ["en", "ro"] as const;
@@ -64,9 +66,19 @@ export default async function ContactPage({ params }: ContactPageProps) {
   
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8 max-w-site">
-        {/* Contact page content removed - ready for custom UI library implementation */}
-      </div>
+      <PageHeader
+        title={{
+          en: "Get In Touch",
+          ro: "Contactează-ne"
+        }}
+        subtitle={{
+          en: "Ready to start your project? Let's discuss how we can help bring your vision to life.",
+          ro: "Gata să începi proiectul tău? Să discutăm cum te putem ajuta să îți realizezi viziunea."
+        }}
+        height="full"
+        showBorders={true}
+      />
+      <ContactContent />
     </div>
   );
 } 

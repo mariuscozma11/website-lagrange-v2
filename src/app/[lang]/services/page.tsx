@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import PageHeader from "@/components/PageHeader";
+import ServicesContent from "./services-content";
 
 // Define supported languages
 const supportedLanguages = ["en", "ro"] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
-// Minimal content for metadata only
+// Content for metadata
 const contentByLang: Record<SupportedLanguage, {
   title: string;
   description: string;
@@ -60,13 +62,22 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
     notFound();
   }
   
-  const content = contentByLang[lang];
-  
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8 max-w-site">
-        {/* Services page content removed - ready for custom UI library implementation */}
-      </div>
+      <PageHeader
+        title={{
+          en: "Our services",
+          ro: "Serviciile noastre"
+        }}
+        subtitle={{
+          en: "Comprehensive technology solutions designed to accelerate your business growth and digital transformation.",
+          ro: "Soluții tehnologice complete proiectate pentru a accelera creșterea afacerii tale și transformarea digitală."
+        }}
+        height="full"
+        showBorders={true}
+      />
+      
+      <ServicesContent />
     </div>
   );
 }

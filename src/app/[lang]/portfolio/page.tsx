@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import PageHeader from "@/components/PageHeader";
+import PortfolioContent from "./portfolio-content";
 
 // Define supported languages
 const supportedLanguages = ["en", "ro"] as const;
@@ -64,9 +66,19 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
   
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8 max-w-site">
-        {/* Portfolio page content removed - ready for custom UI library implementation */}
-      </div>
+      <PageHeader
+        title={{
+          en: "Our Portfolio",
+          ro: "Portofoliul Nostru"
+        }}
+        subtitle={{
+          en: "Explore our completed projects and discover how we've helped businesses achieve their digital goals.",
+          ro: "Explorează proiectele noastre realizate și descoperă cum am ajutat afacerile să își atingă obiectivele digitale."
+        }}
+        height="full"
+        showBorders={true}
+      />
+      <PortfolioContent />
     </div>
   );
 } 

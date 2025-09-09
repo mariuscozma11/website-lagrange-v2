@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import PageHeader from "@/components/PageHeader";
+import AboutContent from "./about-content";
 
 // Define supported languages
 const supportedLanguages = ["en", "ro"] as const;
@@ -64,9 +66,19 @@ export default async function AboutPage({ params }: AboutPageProps) {
   
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8 max-w-site">
-        {/* About page content removed - ready for custom UI library implementation */}
-      </div>
+      <PageHeader
+        title={{
+          en: "About Lagrange Engineering",
+          ro: "Despre Lagrange Engineering"
+        }}
+        subtitle={{
+          en: "Discover our mission, values, and the team behind innovative technology solutions that drive business growth.",
+          ro: "Descoperă misiunea noastră, valorile și echipa din spatele soluțiilor tehnologice inovatoare care conduc creșterea afacerii."
+        }}
+        height="full"
+        showBorders={true}
+      />
+      <AboutContent />
     </div>
   );
 } 

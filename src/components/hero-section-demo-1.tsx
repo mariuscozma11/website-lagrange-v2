@@ -11,13 +11,13 @@ export default function HeroSectionOne() {
   // Bilingual content
   const content = {
     en: {
-      title: "Technology Solutions That Scale",
+      title: "Technology solutions that scale",
       subtitle: "Build your digital presence with professional solutions designed for growth and reliability.",
       primaryButton: "Start Your Project",
       secondaryButton: "Contact Us"
     },
     ro: {
-      title: "Soluții Tehnologice Care Cresc",
+      title: "Soluții tehnologice care cresc",
       subtitle: "Construiește-ți prezența digitală cu soluții profesionale proiectate pentru creștere și fiabilitate.",
       primaryButton: "Începe Proiectul",
       secondaryButton: "Contactează-ne"
@@ -27,7 +27,7 @@ export default function HeroSectionOne() {
   const currentContent = content[language as keyof typeof content] || content.ro;
 
   return (
-    <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
+    <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center h-screen">
       <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-emerald-500 to-transparent" />
       </div>
@@ -38,7 +38,7 @@ export default function HeroSectionOne() {
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
       </div>
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-3xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
           {currentContent.title
             .split(" ")
             .map((word, index) => (
@@ -68,7 +68,7 @@ export default function HeroSectionOne() {
             duration: 0.3,
             delay: 0.8,
           }}
-          className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
+          className="relative z-10 mx-auto max-w-xl py-4 text-center text-xl font-normal text-neutral-600 dark:text-neutral-400"
         >
           {currentContent.subtitle}
         </motion.p>
@@ -96,31 +96,7 @@ export default function HeroSectionOne() {
             </Button>
           </Link>
         </motion.div>
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 10,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 1.2,
-          }}
-          className="relative z-10 mt-20 rounded-3xl border border-neutral-200 bg-neutral-100 p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-900"
-        >
-          <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
-            <img
-              src="/hero-illustration.svg"
-              alt="Landing page preview"
-              className="aspect-[16/9] h-auto w-full object-fill"
-              height={1000}
-              width={1000}
-            />
-          </div>
-        </motion.div>
+
       </div>
     </div>
   );
