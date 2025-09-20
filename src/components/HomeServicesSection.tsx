@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "motion/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
@@ -52,10 +51,12 @@ export default function HomeServicesSection() {
         },
         {
           title: "Digitalization & Automation",
-          description: "Process digitalization and automation solutions for modern businesses.",
+          description: "Process digitalization and automation solutions for modern businesses, including industrial traceability systems.",
           icon: Settings,
           features: [
             "Internal process digitalization",
+            "Industrial traceability & quality control",
+            "Manufacturing process automation",
             "Reporting & analysis systems",
             "Existing software integration",
             "IT infrastructure implementation",
@@ -106,10 +107,12 @@ export default function HomeServicesSection() {
         },
         {
           title: "Digitalizare & Automatizare",
-          description: "Soluții de digitalizare și automatizare a proceselor pentru afacerile moderne.",
+          description: "Soluții de digitalizare și automatizare a proceselor pentru afacerile moderne, incluzând sisteme industriale de trasabilitate.",
           icon: Settings,
           features: [
             "Digitalizarea proceselor interne",
+            "Trasabilitate industrială & control calitate",
+            "Automatizare procese de fabricație",
             "Sisteme de raportare & analiză",
             "Integrare software existent",
             "Implementare infrastructură IT",

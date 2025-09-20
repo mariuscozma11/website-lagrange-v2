@@ -85,11 +85,13 @@ export default function ServicesContent() {
         },
         {
           title: "Digitalization & Automation",
-          description: "Process digitalization and automation solutions for modern businesses. Transform your workflows with intelligent systems that reduce manual work and increase efficiency.",
+          description: "Process digitalization and automation solutions for modern businesses. Transform your workflows with intelligent systems that reduce manual work and increase efficiency, including industrial traceability and quality control systems.",
           icon: Settings,
           illustration: "/digitalization.svg",
           features: [
             "Internal process digitalization",
+            "Industrial traceability & quality control",
+            "Manufacturing process automation",
             "Reporting & analysis systems",
             "Existing software integration",
             "IT infrastructure implementation",
@@ -156,11 +158,13 @@ export default function ServicesContent() {
         },
         {
           title: "Digitalizare & Automatizare",
-          description: "Soluții de digitalizare și automatizare a proceselor pentru afacerile moderne. Transformă-ți fluxurile de lucru cu sisteme inteligente care reduc munca manuală și cresc eficiența.",
+          description: "Soluții de digitalizare și automatizare a proceselor pentru afacerile moderne. Transformă-ți fluxurile de lucru cu sisteme inteligente care reduc munca manuală și cresc eficiența, incluzând sisteme industriale de trasabilitate și control calitate.",
           icon: Settings,
           illustration: "/digitalization.svg",
           features: [
             "Digitalizarea proceselor interne",
+            "Trasabilitate industrială & control calitate",
+            "Automatizare procese de fabricație",
             "Sisteme de raportare & analiză",
             "Integrare software existent",
             "Implementare infrastructură IT",

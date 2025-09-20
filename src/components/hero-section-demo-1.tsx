@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "motion/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "./ui/button";

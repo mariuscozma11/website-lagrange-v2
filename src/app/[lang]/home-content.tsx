@@ -1,4 +1,4 @@
-"use client"
+
 import ContactForm from '@/components/ContactForm'
 import HeroSectionOne from '@/components/hero-section-demo-1'
 import HomeServicesSection from '@/components/HomeServicesSection'
