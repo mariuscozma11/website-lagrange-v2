@@ -296,7 +296,7 @@ export default function ContactForm() {
                     {currentContent.form.success}
                   </h3>
                   <p className="text-neutral-600 dark:text-neutral-400">
-                    We'll get back to you soon!
+                    We&apos;ll get back to you soon!
                   </p>
                 </div>
               </div>

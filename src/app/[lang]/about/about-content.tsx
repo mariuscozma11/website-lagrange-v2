@@ -5,14 +5,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Heart, 
   Users, 
-  Target, 
   Lightbulb,
-  Building2,
   Rocket,
-  Shield,
   MessageCircle,
   Mail
 } from "lucide-react";
@@ -180,11 +178,12 @@ export default function AboutContent() {
             </div>
             {/* Illustration */}
             <div className="flex-1">
-              <div className="flex items-center justify-center h-96 lg:h-[400px]">
-                <img 
+              <div className="flex items-center justify-center h-96 lg:h-[400px] relative">
+                <Image 
                   src="/misiune.svg" 
                   alt={currentContent.mission.title}
-                  className="w-full h-full object-contain max-w-none"
+                  fill
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -276,11 +275,12 @@ export default function AboutContent() {
             </div>
             {/* Illustration */}
             <div className="flex-1">
-              <div className="flex items-center justify-center h-96 lg:h-[400px]">
-                <img 
+              <div className="flex items-center justify-center h-96 lg:h-[400px] relative">
+                <Image 
                   src="/abordare.svg" 
                   alt={currentContent.positioning.title}
-                  className="w-full h-full object-contain max-w-none"
+                  fill
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -338,11 +338,12 @@ export default function AboutContent() {
             </div>
             {/* Illustration */}
             <div className="flex-1">
-              <div className="flex items-center justify-center h-96 lg:h-[400px]">
-                <img 
+              <div className="flex items-center justify-center h-96 lg:h-[400px] relative">
+                <Image 
                   src="/obiective.svg" 
                   alt={currentContent.vision.title}
-                  className="w-full h-full object-contain max-w-none"
+                  fill
+                  className="object-contain"
                 />
               </div>
             </div>

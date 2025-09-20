@@ -59,7 +59,7 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
 
 interface LangLayoutProps {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateMetadata({ params }: LangLayoutProps): Promise<Metadata> {

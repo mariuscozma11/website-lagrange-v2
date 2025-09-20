@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { 
   Monitor, 
@@ -17,10 +18,24 @@ import {
   ExternalLink
 } from "lucide-react";
 
+// Project interface
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  shortDescription: string;
+  longDescription: string;
+  technologies: string[];
+  status: string;
+  type: string;
+  featuredImage?: string;
+  liveUrl?: string;
+}
+
 export default function PortfolioContent() {
   const { language } = useLanguage();
   const currentLang = language as keyof typeof portfolioContent;
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
 
@@ -289,7 +304,7 @@ export default function PortfolioContent() {
   };
 
   // Handle project click
-  const handleProjectClick = (project: any) => {
+  const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -336,7 +351,7 @@ export default function PortfolioContent() {
           >
             <Carousel className="w-full relative">
             <CarouselContent className="-ml-2 md:-ml-4">
-              {currentContent.projects.map((project, index) => {
+              {currentContent.projects.map((project) => {
                 const IconComponent = getProjectIcon(project.category);
                 return (
                   <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
@@ -359,10 +374,11 @@ export default function PortfolioContent() {
                         {/* Project Featured Image or Icon */}
                         <div className="h-48 relative overflow-hidden">
                           {project.featuredImage ? (
-                            <img 
+                            <Image 
                               src={project.featuredImage} 
                               alt={project.title}
-                              className="w-full h-full object-cover transition-transform duration-300"
+                              fill
+                              className="object-cover transition-transform duration-300"
                               onError={(e) => {
                                 // Fallback to icon background if image fails to load
                                 const target = e.target as HTMLImageElement;
@@ -499,13 +515,14 @@ export default function PortfolioContent() {
                 {/* Featured Image with Fullscreen Zoom - Only if image exists */}
                 {selectedProject.featuredImage && (
                   <div 
-                    className="relative cursor-pointer group"
+                    className="relative cursor-pointer group h-64 md:h-80 lg:h-96"
                     onClick={handleImageFullscreen}
                   >
-                    <img 
+                    <Image 
                       src={selectedProject.featuredImage} 
                       alt={selectedProject.title}
-                      className="w-full h-64 md:h-80 lg:h-96 object-contain rounded-lg"
+                      fill
+                      className="object-contain rounded-lg"
                       onError={(e) => {
                         // Hide the entire image container if image fails to load
                         const target = e.target as HTMLImageElement;
@@ -614,9 +631,11 @@ export default function PortfolioContent() {
           onClick={handleImageFullscreen}
         >
           <div className="relative max-w-full max-h-full">
-            <img 
+            <Image 
               src={selectedProject.featuredImage}
               alt={selectedProject.title}
+              width={1200}
+              height={800}
               className="max-w-full max-h-full object-contain"
               onClick={(e) => e.stopPropagation()}
             />

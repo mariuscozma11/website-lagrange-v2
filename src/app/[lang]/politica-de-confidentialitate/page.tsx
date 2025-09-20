@@ -6,25 +6,9 @@ const supportedLanguages = ["en", "ro"] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 // Minimal content for metadata only
-const contentByLang: Record<SupportedLanguage, {
-  title: string;
-  description: string;
-  keywords: string;
-}> = {
-  en: {
-    title: "Privacy Policy - Lagrange Engineering",
-    description: "Privacy policy of Lagrange Engineering SRL",
-    keywords: "privacy policy, Lagrange Engineering, data protection",
-  },
-  ro: {
-    title: "Politica de Confidențialitate - Lagrange Engineering",
-    description: "Politica de confidențialitate a Lagrange Engineering SRL",
-    keywords: "politica confidențialitate, Lagrange Engineering, protecția datelor",
-  },
-};
 
 interface PrivacyPolicyPageProps {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateMetadata({ params }: PrivacyPolicyPageProps): Promise<Metadata> {
@@ -34,12 +18,9 @@ export async function generateMetadata({ params }: PrivacyPolicyPageProps): Prom
     notFound();
   }
   
-  const content = contentByLang[lang];
-  
   return {
-    title: content.title,
-    description: content.description,
-    keywords: content.keywords,
+    title: lang === 'en' ? 'Privacy Policy - Lagrange Engineering' : 'Politica de Confidențialitate - Lagrange Engineering',
+    description: lang === 'en' ? 'Privacy policy for Lagrange Engineering website' : 'Politica de confidențialitate pentru site-ul Lagrange Engineering',
   };
 }
 
@@ -50,7 +31,6 @@ export default async function PrivacyPolicyPage({ params }: PrivacyPolicyPagePro
     notFound();
   }
   
-  const content = contentByLang[lang];
   
   return (
     <div className="min-h-screen">

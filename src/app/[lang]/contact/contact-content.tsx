@@ -2,8 +2,7 @@
 
 import { motion } from "motion/react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import { 

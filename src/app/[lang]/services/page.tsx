@@ -8,31 +8,9 @@ const supportedLanguages = ["en", "ro"] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 // Content for metadata
-const contentByLang: Record<SupportedLanguage, {
-  title: string;
-  description: string;
-  keywords: string;
-  openGraphTitle: string;
-  openGraphDescription: string;
-}> = {
-  en: {
-    title: "Services - Lagrange Engineering | Web Development and Custom Applications",
-    description: "Discover our web development services, custom applications, and digital solutions. Lagrange Engineering offers complete technological solutions for your business.",
-    keywords: "web development services, custom applications, digital solutions, technology, Romania",
-    openGraphTitle: "Services - Lagrange Engineering | Web Development and Custom Applications",
-    openGraphDescription: "Discover our web development services, custom applications, and digital solutions. Lagrange Engineering offers complete technological solutions for your business.",
-  },
-  ro: {
-    title: "Servicii - Lagrange Engineering | Dezvoltare Web și Aplicații Personalizate",
-    description: "Descoperă serviciile noastre de dezvoltare web, aplicații personalizate și soluții digitale. Lagrange Engineering oferă soluții tehnologice complete pentru afacerea ta.",
-    keywords: "servicii dezvoltare web, aplicații personalizate, soluții digitale, tehnologie, România",
-    openGraphTitle: "Servicii - Lagrange Engineering | Dezvoltare Web și Aplicații Personalizate",
-    openGraphDescription: "Descoperă serviciile noastre de dezvoltare web, aplicații personalizate și soluții digitale. Lagrange Engineering oferă soluții tehnologice complete pentru afacerea ta.",
-  },
-};
 
 interface ServicesPageProps {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateMetadata({ params }: ServicesPageProps): Promise<Metadata> {
@@ -42,15 +20,15 @@ export async function generateMetadata({ params }: ServicesPageProps): Promise<M
     notFound();
   }
   
-  const content = contentByLang[lang];
+  const title = lang === 'en' ? 'Services - Lagrange Engineering | Technology Solutions' : 'Servicii - Lagrange Engineering | Soluții Tehnologice';
+  const description = lang === 'en' ? 'Explore our comprehensive technology services including web development, custom applications, and digital solutions.' : 'Explorează serviciile noastre complete de tehnologie incluzând dezvoltare web, aplicații personalizate și soluții digitale.';
   
   return {
-    title: content.title,
-    description: content.description,
-    keywords: content.keywords,
+    title,
+    description,
     openGraph: {
-      title: content.openGraphTitle,
-      description: content.openGraphDescription,
+      title,
+      description,
     },
   };
 }

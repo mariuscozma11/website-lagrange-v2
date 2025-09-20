@@ -32,7 +32,7 @@ const contentByLang: Record<SupportedLanguage, {
 };
 
 interface AboutPageProps {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
@@ -61,8 +61,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
   if (!supportedLanguages.includes(lang)) {
     notFound();
   }
-  
-  const content = contentByLang[lang];
   
   return (
     <div className="min-h-screen">

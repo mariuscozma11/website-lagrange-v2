@@ -2,9 +2,10 @@
 
 import { motion } from "motion/react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Monitor, 
   Smartphone, 
@@ -13,18 +14,28 @@ import {
   Lightbulb
 } from "lucide-react";
 
+// Service interface
+interface Service {
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  illustration?: string;
+  features: string[];
+}
+
 // Service illustrations component
-const ServiceIllustration = ({ service, isEven }: { service: any; isEven: boolean }) => {
+const ServiceIllustration = ({ service }: { service: Service }) => {
   const IconComponent = service.icon;
   
   return (
-    <div className="flex items-center justify-center h-96 lg:h-[500px]">
+    <div className="flex items-center justify-center h-96 lg:h-[500px] relative">
       {service.illustration ? (
         // Use custom SVG illustration if provided
-        <img 
+        <Image 
           src={service.illustration} 
           alt={service.title}
-          className="w-full h-full object-contain max-w-none"
+          fill
+          className="object-contain"
         />
       ) : (
         // Use icon component as fallback
@@ -264,7 +275,7 @@ export default function ServicesContent() {
 
                 {/* Illustration */}
                 <div className="flex-1">
-                  <ServiceIllustration service={service} isEven={isEven} />
+                  <ServiceIllustration service={service} />
                 </div>
               </motion.div>
             );

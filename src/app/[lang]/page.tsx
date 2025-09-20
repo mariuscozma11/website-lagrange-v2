@@ -1,4 +1,3 @@
-import HeroSectionOne from "@/components/hero-section-demo-1";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import HomeContent from "./home-content";
@@ -32,7 +31,7 @@ const contentByLang: Record<SupportedLanguage, {
 };
 
 interface HomePageProps {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
@@ -61,8 +60,6 @@ export default async function HomePage({ params }: HomePageProps) {
   if (!supportedLanguages.includes(lang)) {
     notFound();
   }
-  
-  const content = contentByLang[lang];
   
   return (
     <div className="min-h-screen">
