@@ -8,9 +8,7 @@ import Link from "next/link";
 import { 
   Mail, 
   Phone, 
-  User,
-  Linkedin,
-  Github
+  User
 } from "lucide-react";
 
 export default function ContactContent() {
@@ -53,23 +51,15 @@ export default function ContactContent() {
             name: "Marius",
             role: "Administrator & Technical Director",
             description: "Full-stack software architect and business strategist with expertise in scalable system design, cloud infrastructure, and sustainable technology solutions. Leads technical innovation while driving strategic business development.",
-            email: "marius@lagrangeengineering.ro",
-            skills: ["System Architecture", "Cloud Infrastructure", "Database Design", "API Development", "Business Strategy", "Project Management"],
-            social: {
-              linkedin: "#",
-              github: "#"
-            }
+            email: "marius.cozma@lagrangeengineering.ro",
+            skills: ["System Architecture", "Cloud Infrastructure", "Database Design", "API Development", "Business Strategy", "Project Management"]
           },
           {
             name: "Andrei",
             role: "Co-Founder & Financial Operations",
             description: "Financial operations manager and future real estate investment strategist, ensuring company's financial stability and growth.",
-            email: "andrei@lagrangeengineering.ro", 
-            skills: ["Financial Management", "Accounting Operations", "Investment Planning", "Real Estate Strategy"],
-            social: {
-              linkedin: "#",
-              github: "#"
-            }
+            email: "andrei.barbu@lagrangeengineering.ro", 
+            skills: ["Financial Management", "Accounting Operations", "Investment Planning", "Real Estate Strategy"]
           }
         ]
       },
@@ -109,23 +99,15 @@ export default function ContactContent() {
             name: "Marius",
             role: "Administrator & Director Tehnic",
             description: "Arhitect software full-stack și strateg în afaceri cu expertiză în designul de sisteme scalabile, infrastructură cloud și soluții tehnologice sustenabile. Conduce inovația tehnică în timp ce dirijează dezvoltarea strategică a afacerii.",
-            email: "marius@lagrangeengineering.ro",
-            skills: ["Arhitectură Sisteme", "Infrastructură Cloud", "Design Baze de Date", "Dezvoltare API", "Strategie Afaceri", "Management Proiecte"],
-            social: {
-              linkedin: "#",
-              github: "#"
-            }
+            email: "marius.cozma@lagrangeengineering.ro",
+            skills: ["Arhitectură Sisteme", "Infrastructură Cloud", "Design Baze de Date", "Dezvoltare API", "Strategie Afaceri", "Management Proiecte"]
           },
           {
             name: "Andrei",
             role: "Co-Fondator & Operațiuni Financiare",
             description: "Manager operațiuni financiare și viitor strateg în investiții imobiliare, asigurând stabilitatea financiară și creșterea companiei.",
-            email: "andrei@lagrangeengineering.ro",
-            skills: ["Management Financiar", "Operațiuni Contabile", "Planificare Investiții", "Strategie Imobiliară"],
-            social: {
-              linkedin: "#",
-              github: "#"
-            }
+            email: "andrei.barbu@lagrangeengineering.ro",
+            skills: ["Management Financiar", "Operațiuni Contabile", "Planificare Investiții", "Strategie Imobiliară"]
           }
         ]
       },
@@ -239,9 +221,6 @@ export default function ContactContent() {
               const emailHoverClasses = isAndrei
                 ? "hover:text-blue-600 dark:hover:text-blue-400"
                 : "hover:text-emerald-600 dark:hover:text-emerald-400";
-              const socialHoverClasses = isAndrei
-                ? "hover:bg-blue-100 dark:hover:bg-blue-900/30"
-                : "hover:bg-emerald-100 dark:hover:bg-emerald-900/30";
 
               return (
                 <motion.div
@@ -287,7 +266,7 @@ export default function ContactContent() {
                             </div>
                           </div>
 
-                          {/* Contact & Social */}
+                          {/* Contact */}
                           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                             <Link 
                               href={`mailto:${member.email}`}
@@ -296,20 +275,6 @@ export default function ContactContent() {
                               <Mail className="w-4 h-4" />
                               <span>{member.email}</span>
                             </Link>
-                            <div className="flex gap-2">
-                              <Link 
-                                href={member.social.linkedin}
-                                className={`p-2 rounded-md bg-neutral-100 dark:bg-neutral-800 ${socialHoverClasses} transition-colors`}
-                              >
-                                <Linkedin className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
-                              </Link>
-                              <Link 
-                                href={member.social.github}
-                                className={`p-2 rounded-md bg-neutral-100 dark:bg-neutral-800 ${socialHoverClasses} transition-colors`}
-                              >
-                                <Github className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
-                              </Link>
-                            </div>
                           </div>
                         </div>
                       </div>

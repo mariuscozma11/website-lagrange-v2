@@ -40,6 +40,20 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
           alt: "Lagrange Engineering - Technology Solutions and Web Development",
           type: "image/webp",
         },
+        {
+          url: "/og-img.webp",
+          width: 1200,
+          height: 630,
+          alt: "Lagrange Engineering - Technology Solutions and Web Development",
+          type: "image/webp",
+        },
+        {
+          url: "/og-img.webp",
+          width: 800,
+          height: 600,
+          alt: "Lagrange Engineering - Technology Solutions and Web Development",
+          type: "image/webp",
+        },
       ],
     },
     twitter: {
@@ -48,6 +62,53 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       description: "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
       images: ["/og-img.webp"],
       creator: "@lagrangeengineering",
+      site: "@lagrangeengineering",
+    },
+    other: {
+      // LinkedIn specific
+      "linkedin:owner": "lagrangeengineering",
+      "linkedin:site": "lagrangeengineering",
+      
+      // WhatsApp specific
+      "whatsapp:title": "Lagrange Engineering - Technology Solutions and Web Development",
+      "whatsapp:description": "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
+      "whatsapp:image": "/og-img.webp",
+      
+      // Telegram specific
+      "telegram:title": "Lagrange Engineering - Technology Solutions and Web Development",
+      "telegram:description": "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
+      "telegram:image": "/og-img.webp",
+      
+      // Discord specific
+      "discord:title": "Lagrange Engineering - Technology Solutions and Web Development",
+      "discord:description": "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
+      "discord:image": "/og-img.webp",
+      
+      // Additional Open Graph properties
+      "og:image:width": "1920",
+      "og:image:height": "888",
+      "og:image:type": "image/webp",
+      "og:image:secure_url": "https://lagrangeengineering.ro/og-img.webp",
+      
+      // Article specific
+      "article:author": "Lagrange Engineering",
+      "article:publisher": "https://lagrangeengineering.ro",
+      "article:section": "Technology",
+      "article:tag": ["web development", "custom applications", "digital solutions"],
+      
+      // Business specific
+      "business:contact_data:street_address": "Romania",
+      "business:contact_data:locality": "Romania",
+      "business:contact_data:country_name": "Romania",
+      
+      // Mobile app specific
+      "al:web:url": "https://lagrangeengineering.ro/en",
+      "al:web:should_fallback": "true",
+      
+      // Additional meta tags
+      "theme-color": "#000000",
+      "msapplication-TileColor": "#000000",
+      "msapplication-config": "/browserconfig.xml",
     },
     alternates: {
       canonical: "https://lagrangeengineering.ro/en",
@@ -91,6 +152,20 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
           alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
           type: "image/webp",
         },
+        {
+          url: "/og-img.webp",
+          width: 1200,
+          height: 630,
+          alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+          type: "image/webp",
+        },
+        {
+          url: "/og-img.webp",
+          width: 800,
+          height: 600,
+          alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+          type: "image/webp",
+        },
       ],
     },
     twitter: {
@@ -99,6 +174,53 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
       images: ["/og-img.webp"],
       creator: "@lagrangeengineering",
+      site: "@lagrangeengineering",
+    },
+    other: {
+      // LinkedIn specific
+      "linkedin:owner": "lagrangeengineering",
+      "linkedin:site": "lagrangeengineering",
+      
+      // WhatsApp specific
+      "whatsapp:title": "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+      "whatsapp:description": "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
+      "whatsapp:image": "/og-img.webp",
+      
+      // Telegram specific
+      "telegram:title": "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+      "telegram:description": "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
+      "telegram:image": "/og-img.webp",
+      
+      // Discord specific
+      "discord:title": "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+      "discord:description": "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
+      "discord:image": "/og-img.webp",
+      
+      // Additional Open Graph properties
+      "og:image:width": "1920",
+      "og:image:height": "888",
+      "og:image:type": "image/webp",
+      "og:image:secure_url": "https://lagrangeengineering.ro/og-img.webp",
+      
+      // Article specific
+      "article:author": "Lagrange Engineering",
+      "article:publisher": "https://lagrangeengineering.ro",
+      "article:section": "Technology",
+      "article:tag": ["dezvoltare web", "aplicații personalizate", "soluții digitale"],
+      
+      // Business specific
+      "business:contact_data:street_address": "România",
+      "business:contact_data:locality": "România",
+      "business:contact_data:country_name": "România",
+      
+      // Mobile app specific
+      "al:web:url": "https://lagrangeengineering.ro/ro",
+      "al:web:should_fallback": "true",
+      
+      // Additional meta tags
+      "theme-color": "#000000",
+      "msapplication-TileColor": "#000000",
+      "msapplication-config": "/browserconfig.xml",
     },
     alternates: {
       canonical: "https://lagrangeengineering.ro/ro",
