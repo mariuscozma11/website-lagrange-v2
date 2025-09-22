@@ -34,23 +34,9 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       url: "https://lagrangeengineering.ro/en",
       images: [
         {
-          url: "https://lagrangeengineering.ro/og-img.webp",
+          url: "https://lagrangeengineering.ro/api/og",
           width: 1920,
           height: 888,
-          alt: "Lagrange Engineering - Technology Solutions and Web Development",
-          type: "image/webp",
-        },
-        {
-          url: "https://lagrangeengineering.ro/og-img.webp",
-          width: 1200,
-          height: 630,
-          alt: "Lagrange Engineering - Technology Solutions and Web Development",
-          type: "image/webp",
-        },
-        {
-          url: "https://lagrangeengineering.ro/og-img.webp",
-          width: 800,
-          height: 600,
           alt: "Lagrange Engineering - Technology Solutions and Web Development",
           type: "image/webp",
         },
@@ -146,23 +132,9 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       url: "https://lagrangeengineering.ro/ro",
       images: [
         {
-          url: "https://lagrangeengineering.ro/og-img.webp",
+          url: "https://lagrangeengineering.ro/api/og",
           width: 1920,
           height: 888,
-          alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
-          type: "image/webp",
-        },
-        {
-          url: "https://lagrangeengineering.ro/og-img.webp",
-          width: 1200,
-          height: 630,
-          alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
-          type: "image/webp",
-        },
-        {
-          url: "https://lagrangeengineering.ro/og-img.webp",
-          width: 800,
-          height: 600,
           alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
           type: "image/webp",
         },
