@@ -30,7 +30,13 @@ export const metadata: Metadata = {
     apple: "/favicon.ico",
   },
   openGraph: {
+    title: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+    description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
+    url: "https://lagrangeengineering.ro",
+    siteName: "Lagrange Engineering",
     images: ['/og-img.png'],
+    locale: 'ro_RO',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -50,6 +56,28 @@ export default function RootLayout({
   return (
     <html lang="ro" suppressHydrationWarning>
       <head>
+        {/* Open Graph meta tags */}
+        <meta property="og:image" content="https://lagrangeengineering.ro/og-img.png" />
+        <meta property="og:site_name" content="Lagrange Engineering" />
+        <meta property="og:url" content="https://lagrangeengineering.ro" />
+        <meta property="og:title" content="Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web" />
+        <meta property="og:description" content="Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate." />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ro_RO" />
+        
+        {/* Twitter Card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://lagrangeengineering.ro/og-img.png" />
+        <meta name="twitter:title" content="Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web" />
+        <meta name="twitter:description" content="Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate." />
+        <meta name="twitter:site" content="@lagrangeengineering" />
+        <meta name="twitter:creator" content="@lagrangeengineering" />
+        
+        {/* Additional meta tags for better social media support */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
