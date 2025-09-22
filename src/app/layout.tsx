@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lagrangeengineering.ro'),
   title: {
     default: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
     template: "%s | Lagrange Engineering"
@@ -51,15 +52,15 @@ export const metadata: Metadata = {
     locale: "ro_RO",
     siteName: "Lagrange Engineering",
     url: "https://lagrangeengineering.ro",
-    images: [
-      {
-        url: "/og-img.webp",
-        width: 1200,
-        height: 630,
-        alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
-        type: "image/webp",
-      },
-    ],
+      images: [
+        {
+          url: "/og-img.webp",
+          width: 1920,
+          height: 888,
+          alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+          type: "image/webp",
+        },
+      ],
   },
   twitter: {
     card: "summary_large_image",

@@ -35,8 +35,8 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       images: [
         {
           url: "/og-img.webp",
-          width: 1200,
-          height: 630,
+          width: 1920,
+          height: 888,
           alt: "Lagrange Engineering - Technology Solutions and Web Development",
           type: "image/webp",
         },
@@ -86,8 +86,8 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       images: [
         {
           url: "/og-img.webp",
-          width: 1200,
-          height: 630,
+          width: 1920,
+          height: 888,
           alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
           type: "image/webp",
         },
