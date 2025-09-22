@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import StructuredData, { organizationData, websiteData } from "@/components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,28 +18,67 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+  title: {
+    default: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+    template: "%s | Lagrange Engineering"
+  },
   description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
-  keywords: "dezvoltare web, aplicații personalizate, soluții digitale, tehnologie, România, Lagrange Engineering",
-  authors: [{ name: "Lagrange Engineering" }],
+  keywords: "dezvoltare web, aplicații personalizate, soluții digitale, tehnologie, România, Lagrange Engineering, web development Romania, custom applications, digital solutions",
+  authors: [{ name: "Lagrange Engineering", url: "https://lagrangeengineering.ro" }],
   creator: "Lagrange Engineering",
   publisher: "Lagrange Engineering",
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
     description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
     type: "website",
     locale: "ro_RO",
     siteName: "Lagrange Engineering",
+    url: "https://lagrangeengineering.ro",
+    images: [
+      {
+        url: "/og-img.webp",
+        width: 1200,
+        height: 630,
+        alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
+        type: "image/webp",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
     description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
+    images: ["/og-img.webp"],
+    creator: "@lagrangeengineering",
   },
   alternates: {
     canonical: "https://lagrangeengineering.ro",
+    languages: {
+      'ro': 'https://lagrangeengineering.ro/ro',
+      'en': 'https://lagrangeengineering.ro/en',
+    },
   },
+  verification: {
+    google: "your-google-verification-code", // Replace with actual verification code
+  },
+  category: 'technology',
 };
 
 // Route segment options for SSG (applies to all child routes)
@@ -62,6 +102,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
+            <StructuredData type="Organization" data={organizationData} />
+            <StructuredData type="WebSite" data={websiteData} />
             <NavBar />
             <main className="min-h-screen max-w-site mx-auto">
               {children}

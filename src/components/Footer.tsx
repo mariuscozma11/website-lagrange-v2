@@ -88,11 +88,6 @@ export default function Footer() {
                   {t('footer.terms')}
                 </Link>
               </li>
-              <li>
-                <Link href={`/${language}/politica-cookies`} className="text-sm text-gray-700 hover:text-emerald-700 dark:text-gray-300 dark:hover:text-emerald-400">
-                  {t('footer.cookies')}
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

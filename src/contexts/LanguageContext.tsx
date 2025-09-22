@@ -33,7 +33,6 @@ const translations = {
     "footer.legal": "Legal",
     "footer.terms": "Terms & Conditions",
     "footer.privacy": "Privacy Policy",
-    "footer.cookies": "Cookie Policy",
     "footer.copyright": "© 2025 Lagrange Engineering. All rights reserved.",
   },
   ro: {
@@ -55,7 +54,6 @@ const translations = {
     "footer.legal": "Legal",
     "footer.terms": "Termeni și Condiții",
     "footer.privacy": "Politica de Confidențialitate",
-    "footer.cookies": "Politica Cookies",
     "footer.copyright": "© 2025 Lagrange Engineering. Toate drepturile rezervate.",
   },
 };

@@ -14,6 +14,7 @@ export default function ContactForm() {
   const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   // Bilingual content
   const content = {
@@ -29,7 +30,9 @@ export default function ContactForm() {
         message: "Project Details",
         submit: "Send Message",
         submitting: "Sending...",
-        success: "Message Sent Successfully!"
+        success: "Message Sent Successfully!",
+        agreement: "By sending this message, you agree to our Terms & Conditions and consent to the processing of your personal data according to our Privacy Policy.",
+        agreementShort: "I agree to the Terms & Conditions and Privacy Policy *"
       },
       contact: {
         title: "Contact Information",
@@ -54,7 +57,9 @@ export default function ContactForm() {
         message: "Detaliile Proiectului",
         submit: "Trimite Mesajul",
         submitting: "Se trimite...",
-        success: "Mesajul a fost trimis cu succes!"
+        success: "Mesajul a fost trimis cu succes!",
+        agreement: "Prin trimiterea acestui mesaj, sunteți de acord cu Termenii și Condițiile noastre și consimțiți la prelucrarea datelor dumneavoastră cu caracter personal conform Politicii de Confidențialitate.",
+        agreementShort: "Sunt de acord cu Termenii și Condițiile și Politica de Confidențialitate *"
       },
       contact: {
         title: "Informații de Contact",
@@ -73,6 +78,15 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if (!agreedToTerms) {
+      alert(language === 'en' 
+        ? 'Please agree to the Terms & Conditions and Privacy Policy before submitting.'
+        : 'Vă rugăm să fiți de acord cu Termenii și Condițiile și Politica de Confidențialitate înainte de a trimite.'
+      );
+      return;
+    }
+    
     setIsSubmitting(true);
     
     // Simulate form submission
@@ -84,6 +98,7 @@ export default function ContactForm() {
     // Reset form after showing success
     setTimeout(() => {
       setIsSubmitted(false);
+      setAgreedToTerms(false);
       e.currentTarget.reset();
     }, 3000);
   };
@@ -391,9 +406,31 @@ export default function ContactForm() {
                   />
                 </div>
 
+                {/* Agreement Section */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="agreement"
+                      checked={agreedToTerms}
+                      onChange={(e) => setAgreedToTerms(e.target.checked)}
+                      className="mt-1 h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-neutral-300 dark:border-neutral-600 rounded"
+                      required
+                    />
+                    <div className="space-y-1">
+                      <Label htmlFor="agreement" className="text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
+                        {currentContent.form.agreementShort}
+                      </Label>
+                      <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        {currentContent.form.agreement}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !agreedToTerms}
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
