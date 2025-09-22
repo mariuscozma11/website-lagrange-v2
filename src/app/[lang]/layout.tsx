@@ -34,21 +34,21 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       url: "https://lagrangeengineering.ro/en",
       images: [
         {
-          url: "/og-img.webp",
+          url: "https://lagrangeengineering.ro/og-img.webp",
           width: 1920,
           height: 888,
           alt: "Lagrange Engineering - Technology Solutions and Web Development",
           type: "image/webp",
         },
         {
-          url: "/og-img.webp",
+          url: "https://lagrangeengineering.ro/og-img.webp",
           width: 1200,
           height: 630,
           alt: "Lagrange Engineering - Technology Solutions and Web Development",
           type: "image/webp",
         },
         {
-          url: "/og-img.webp",
+          url: "https://lagrangeengineering.ro/og-img.webp",
           width: 800,
           height: 600,
           alt: "Lagrange Engineering - Technology Solutions and Web Development",
@@ -60,7 +60,7 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       card: "summary_large_image",
       title: "Lagrange Engineering - Technology Solutions and Web Development",
       description: "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
-      images: ["/og-img.webp"],
+      images: ["https://lagrangeengineering.ro/og-img.webp"],
       creator: "@lagrangeengineering",
       site: "@lagrangeengineering",
     },
@@ -72,17 +72,17 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       // WhatsApp specific
       "whatsapp:title": "Lagrange Engineering - Technology Solutions and Web Development",
       "whatsapp:description": "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
-      "whatsapp:image": "/og-img.webp",
+      "whatsapp:image": "https://lagrangeengineering.ro/og-img.webp",
       
       // Telegram specific
       "telegram:title": "Lagrange Engineering - Technology Solutions and Web Development",
       "telegram:description": "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
-      "telegram:image": "/og-img.webp",
+      "telegram:image": "https://lagrangeengineering.ro/og-img.webp",
       
       // Discord specific
       "discord:title": "Lagrange Engineering - Technology Solutions and Web Development",
       "discord:description": "Lagrange Engineering is a Romanian technology company providing web development, custom applications, and high-quality digital solutions.",
-      "discord:image": "/og-img.webp",
+      "discord:image": "https://lagrangeengineering.ro/og-img.webp",
       
       // Additional Open Graph properties
       "og:image:width": "1920",
@@ -146,21 +146,21 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       url: "https://lagrangeengineering.ro/ro",
       images: [
         {
-          url: "/og-img.webp",
+          url: "https://lagrangeengineering.ro/og-img.webp",
           width: 1920,
           height: 888,
           alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
           type: "image/webp",
         },
         {
-          url: "/og-img.webp",
+          url: "https://lagrangeengineering.ro/og-img.webp",
           width: 1200,
           height: 630,
           alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
           type: "image/webp",
         },
         {
-          url: "/og-img.webp",
+          url: "https://lagrangeengineering.ro/og-img.webp",
           width: 800,
           height: 600,
           alt: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
@@ -172,7 +172,7 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       card: "summary_large_image",
       title: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
       description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
-      images: ["/og-img.webp"],
+      images: ["https://lagrangeengineering.ro/og-img.webp"],
       creator: "@lagrangeengineering",
       site: "@lagrangeengineering",
     },
@@ -184,17 +184,17 @@ const metadataByLang: Record<SupportedLanguage, Metadata> = {
       // WhatsApp specific
       "whatsapp:title": "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
       "whatsapp:description": "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
-      "whatsapp:image": "/og-img.webp",
+      "whatsapp:image": "https://lagrangeengineering.ro/og-img.webp",
       
       // Telegram specific
       "telegram:title": "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
       "telegram:description": "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
-      "telegram:image": "/og-img.webp",
+      "telegram:image": "https://lagrangeengineering.ro/og-img.webp",
       
       // Discord specific
       "discord:title": "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
       "discord:description": "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
-      "discord:image": "/og-img.webp",
+      "discord:image": "https://lagrangeengineering.ro/og-img.webp",
       
       // Additional Open Graph properties
       "og:image:width": "1920",
