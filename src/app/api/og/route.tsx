@@ -8,7 +8,7 @@ export async function GET() {
     // Read the existing og-img.webp file
     const imageBuffer = await readFile(join(process.cwd(), 'public', 'og-img.webp'));
     
-    return new Response(imageBuffer, {
+    return new Response(new Uint8Array(imageBuffer), {
       headers: {
         'Content-Type': 'image/webp',
         'Cache-Control': 'public, max-age=31536000, immutable',
