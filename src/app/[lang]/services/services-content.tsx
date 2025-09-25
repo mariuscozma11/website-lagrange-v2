@@ -203,7 +203,7 @@ export default function ServicesContent() {
   
   return (
     <section className="py-20">
-      <div className="container mx-auto px-4 max-w-site">
+      <div className="container mx-auto px-6 max-w-7xl">
       
 
         {/* Services with alternating layout */}
