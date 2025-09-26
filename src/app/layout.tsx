@@ -25,9 +25,15 @@ export const metadata: Metadata = {
   },
   description: "Lagrange Engineering este o companie română de tehnologie care oferă dezvoltare web, aplicații personalizate și soluții digitale de înaltă calitate.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/LG.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: [
+      { url: "/LG.png", sizes: "180x180", type: "image/png" }
+    ],
   },
   openGraph: {
     title: "Lagrange Engineering - Soluții Tehnologice și Dezvoltare Web",
