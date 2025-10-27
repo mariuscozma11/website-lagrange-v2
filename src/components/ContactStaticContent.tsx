@@ -20,7 +20,7 @@ export default function ContactStaticContent({ language }: ContactStaticContentP
         phone: "+40 756 109 881",
         company: "Lagrange Engineering SRL",
         cui: "CUI 51196824",
-        j: "J2025005646004"
+        j: "ROONRC.J2025005646004"
       }
     },
     ro: {
@@ -34,7 +34,7 @@ export default function ContactStaticContent({ language }: ContactStaticContentP
         phone: "+40 756 109 881",
         company: "Lagrange Engineering SRL",
         cui: "CUI 51196824",
-        j: "J2025005646004"
+        j: "ROONRC.J2025005646004"
       }
     }
   };
