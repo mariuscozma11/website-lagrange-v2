@@ -56,7 +56,7 @@ export default function Footer() {
                   </Link>
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">CUI 51196824</p>
-                <p className="text-gray-700 dark:text-gray-300">J20505646004</p>
+                <p className="text-gray-700 dark:text-gray-300">ROONRC.J20505646004</p>
               </div>
             </div>
           </div>
