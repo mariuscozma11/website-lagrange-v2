@@ -189,6 +189,8 @@ export default function PortfolioContent() {
           status: "Finalizat", 
           type: "Website Organizație",
           featuredImage: "/portfolio/mechafusion-featured.webp",
+          liveUrl: "https://www.clubrobotica.upt.ro/"
+          ,
           gallery: [
             "/portfolio/mechafusion-1.jpg",
             "/portfolio/mechafusion-2.jpg",
@@ -214,24 +216,9 @@ export default function PortfolioContent() {
         },
         
         // Proiecte În Dezvoltare
+        
         {
           id: 4,
-          title: "Lanesta - Aplicație Pescari",
-          category: "mobile",
-          shortDescription: "Aplicație mobilă socială de ghidaj pentru pescarii români cu sesiuni de pescuit și turnee.",
-          longDescription: "Aplicație mobilă comprehensivă destinată pasionaților de pescuit din România. Include ghiduri detaliate de pescuit cu informații despre momeli și specii de pești pentru diferite ape, urmărire sesiuni active de pescuit cu înregistrare capturi (lungime, greutate, specie), funcții sociale pentru partajare publică sesiuni, descoperire locații pescuit bazată pe locație și sistem management turnee/evenimente. Aplicația își propune să construiască o comunitate de pescari oferind în același timp informații valoroase despre pescuit.",
-          technologies: ["React Native", "Supabase", "Google Maps API", "Social Network"],
-          status: "În dezvoltare",
-          type: "Aplicație Mobilă Socială",
-          featuredImage: "/portfolio/lanesta-featured.webp",
-          gallery: [
-            "/portfolio/lanesta-1.jpg",
-            "/portfolio/lanesta-2.jpg",
-            "/portfolio/lanesta-3.jpg"
-          ]
-        },
-        {
-          id: 5,
           title: "Platformă Conferințe Medicale",
           category: "web",
           shortDescription: "Aplicație web completă și website pentru studenții la medicină cu ticketing și management workshop-uri.",
@@ -239,10 +226,16 @@ export default function PortfolioContent() {
           technologies: ["Next.js", "TypeScript", "Supabase", "Stripe", "QR Code API", "Email API"],
           status: "În dezvoltare",
           type: "Platformă Conferințe",
-          featuredImage: "/portfolio/medical-conference-featured.webp",
+          featuredImage: "/medis1.png",
+          liveUrl: "https://medis-alpha.vercel.app/",
+          gallery: [
+            "/medis2.png",
+            "/medis3.png",
+          ]
         },
+        
         {
-          id: 6,
+          id: 5,
           title: "Handlyze - Analiză Handbal",
           category: "mobile",
           shortDescription: "Aplicație cross-platform statistici handbal pentru cluburile românești cu analiză detaliată jucători.",
@@ -253,7 +246,7 @@ export default function PortfolioContent() {
           featuredImage: "/portfolio/handlyze-featured.webp",
         },
         {
-          id: 7,
+          id: 6,
           title: "Platformă Shop Printare 3D",
           category: "web",
           shortDescription: "Website e-commerce cu analiză instantanee fișiere STEP și stabilire preț automată pentru servicii printare 3D.",
@@ -263,17 +256,7 @@ export default function PortfolioContent() {
           type: "Platformă E-commerce",
           featuredImage: "/portfolio/3dprinting-featured.webp",
         },
-        {
-          id: 8,
-          title: "Sistem Trasabilitate Senzori Industriali",
-          category: "industrial",
-          shortDescription: "Sistem industrial de trasabilitate pentru companie producătoare de senzori cu urmărire automată control calitate.",
-          longDescription: "Sistem comprehensiv de trasabilitate industrială destinat unei companii producătoare de senzori. Construit pe Microsoft SQL Server cu sisteme automate de backup, platforma urmărește și trasează atât piesele 'OK' cât și 'NOK' (Not OK) pe întregul proces de fabricație. Funcționalitățile includ monitorizare control calitate în timp real, clasificare automată piese, integrare linie producție, urmărire și analiză defecte, raportare conformitate și piste audit comprehensive. Sistemul asigură transparență completă în fabricație și ajută la menținerea standardelor de calitate oferind în același timp informații valoroase pentru optimizarea proceselor.",
-          technologies: ["Microsoft SQL Server", "IPC", "Industrial IoT", "Backup Automat"],
-          status: "În dezvoltare",
-          type: "Sistem Industrial",
-          featuredImage: "/portfolio/industrial-traceability-featured.webp",
-        }
+        
       ],
 
       // Coming Soon Section
