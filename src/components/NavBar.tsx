@@ -6,6 +6,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function NavBar() {
   const { t, language } = useLanguage();
@@ -121,69 +122,114 @@ export default function NavBar() {
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <ThemeToggle />
-            {/* Animated Hamburger Button */}
+            {/* Hamburger Button */}
             <button
-              className="relative w-8 h-8 flex flex-col justify-center items-center focus:outline-none"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              className="relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open menu"
             >
-              <span 
-                className={`w-6 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
-              />
-              <span 
-                className={`w-6 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ease-in-out mt-1.5 ${
-                  isMobileMenuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span 
-                className={`w-6 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ease-in-out mt-1.5 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
-              />
+              <span className="w-6 h-0.5 bg-gray-900 dark:bg-white" />
+              <span className="w-6 h-0.5 bg-gray-900 dark:bg-white" />
+              <span className="w-6 h-0.5 bg-gray-900 dark:bg-white" />
             </button>
           </div>
         </div>
         
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div
-            className={`absolute inset-x-0 top-full mx-auto max-w-7xl rounded-b-2xl shadow-2xl transition-all duration-500 ease-in-out ${
-              scrolled 
-                ? 'w-[85%] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-gray-200/50 dark:border-slate-700/50' 
-                : 'w-[90%] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-gray-200/50 dark:border-slate-700/50'
-            }`}
-          >
-            <div className="p-8 space-y-6">
-              {/* Navigation Links */}
-              <div className="space-y-4">
-                {navItems.map((item, index) => (
-                  <Link
-                    key={item.name}
-                    href={item.link}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-lg font-medium text-gray-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 hover:translate-x-2 py-2 border-b border-gray-200/50 dark:border-slate-700/30 last:border-b-0"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              
-              {/* Divider */}
-              <div className="border-t border-gray-200/50 dark:border-slate-700/50 pt-4">
-                <Link
-                  href={`/${language}/contact`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-4 text-center font-bold text-white hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap"
-                >
-                  {t('common.cta')}
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Side Panel */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              {/* Backdrop with blur */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+
+              {/* Side Panel */}
+              <motion.div
+                initial={{ x: "100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "100%", opacity: 0 }}
+                transition={{
+                  duration: 0.4,
+                  ease: [0.32, 0.72, 0, 1]
+                }}
+                className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-2xl z-50 overflow-y-auto"
+              >
+                <div className="p-8 space-y-8">
+                  {/* Close Button */}
+                  <div className="flex justify-end">
+                    <button
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="p-2 rounded-full hover:bg-gray-200/50 dark:hover:bg-slate-800/50 transition-colors"
+                      aria-label="Close menu"
+                    >
+                      <svg
+                        className="w-6 h-6 text-gray-900 dark:text-white"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <div className="space-y-2">
+                    {navItems.map((item, index) => (
+                      <motion.div
+                        key={item.name}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{
+                          delay: index * 0.1,
+                          duration: 0.3,
+                          ease: "easeOut"
+                        }}
+                      >
+                        <Link
+                          href={item.link}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block text-lg font-medium text-gray-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 hover:translate-x-2 py-3 px-4 rounded-lg hover:bg-gray-100/50 dark:hover:bg-slate-800/50"
+                        >
+                          {item.name}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Divider */}
+                  <div className="border-t border-gray-200/50 dark:border-slate-700/50 pt-6">
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{
+                        delay: navItems.length * 0.1,
+                        duration: 0.3
+                      }}
+                    >
+                      <Link
+                        href={`/${language}/contact`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block w-full rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-4 text-center font-bold text-white hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      >
+                        {t('common.cta')}
+                      </Link>
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
