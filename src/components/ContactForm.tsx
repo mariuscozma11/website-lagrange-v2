@@ -78,29 +78,56 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!agreedToTerms) {
-      alert(language === 'en' 
+      alert(language === 'en'
         ? 'Please agree to the Terms & Conditions and Privacy Policy before submitting.'
         : 'Vă rugăm să fiți de acord cu Termenii și Condițiile și Politica de Confidențialitate înainte de a trimite.'
       );
       return;
     }
-    
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after showing success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setAgreedToTerms(false);
-      e.currentTarget.reset();
-    }, 3000);
+
+    try {
+      const formData = new FormData(e.currentTarget);
+
+      // Add Web3Forms access key
+      formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
+
+      // Submit to Web3Forms API
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+
+        // Reset form after showing success
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setAgreedToTerms(false);
+          e.currentTarget.reset();
+        }, 3000);
+      } else {
+        console.error("Form submission error:", data);
+        alert(language === 'en'
+          ? 'There was an error submitting the form. Please try again.'
+          : 'A apărut o eroare la trimiterea formularului. Vă rugăm să încercați din nou.'
+        );
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert(language === 'en'
+        ? 'There was an error submitting the form. Please try again.'
+        : 'A apărut o eroare la trimiterea formularului. Vă rugăm să încercați din nou.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
