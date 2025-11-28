@@ -40,10 +40,10 @@ export default function NavBar() {
       {/* Desktop Navigation */}
       <div
         className={`mx-auto hidden max-w-[1440px] items-center justify-between transition-all duration-300 ease-in-out ${
-          scrolled 
-            ? 'w-[90%] max-w-4xl rounded-full backdrop-blur-sm bg-white/80 dark:bg-slate-950/40 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] px-10 py-4' 
+          scrolled
+            ? 'w-[90%] max-w-4xl rounded-full backdrop-blur-sm bg-white/80 dark:bg-slate-950/40 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] px-10 py-4'
             : 'w-full px-6 py-4'
-        } lg:flex`}
+        } min-[1150px]:flex`}
       >
         <Link href="/" className="flex items-center space-x-3 pr-6 flex-shrink-0">
         
@@ -92,7 +92,7 @@ export default function NavBar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="relative lg:hidden">
+      <div className="relative min-[1150px]:hidden">
         {/* Header */}
         <div
           className={`mx-auto flex max-w-7xl items-center justify-between transition-all px-6 py-4 duration-300 ease-in-out ${
