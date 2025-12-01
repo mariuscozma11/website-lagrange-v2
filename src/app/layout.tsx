@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import StructuredData, { organizationData, websiteData } from "@/components/StructuredData";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,6 +101,7 @@ export default function RootLayout({
             <NavBar />
             <main className="min-h-screen max-w-site mx-auto">
               {children}
+              <Analytics />
             </main>
             <Footer />
           </LanguageProvider>
