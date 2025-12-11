@@ -11,19 +11,22 @@ export default function HeroSectionOne() {
   const content = {
     en: {
       title: "Technology solutions that scale",
-      subtitle: "Build your digital presence with professional solutions designed for growth and reliability.",
+      subtitle:
+        "Build your digital presence with professional solutions designed for growth and reliability.",
       primaryButton: "Start Your Project",
-      secondaryButton: "Contact Us"
+      secondaryButton: "Contact Us",
     },
     ro: {
       title: "Soluții tehnologice care cresc",
-      subtitle: "Construiește-ți prezența digitală cu soluții profesionale proiectate pentru creștere și fiabilitate.",
+      subtitle:
+        "Construiește-ți prezența digitală cu soluții profesionale proiectate pentru creștere și fiabilitate.",
       primaryButton: "Începe Proiectul",
-      secondaryButton: "Contactează-ne"
-    }
+      secondaryButton: "Contactează-ne",
+    },
   };
 
-  const currentContent = content[language as keyof typeof content] || content.ro;
+  const currentContent =
+    content[language as keyof typeof content] || content.ro;
 
   return (
     <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center h-screen">
@@ -38,30 +41,32 @@ export default function HeroSectionOne() {
       </div>
       <div className="px-4 py-10 md:py-20">
         <h1 className="relative z-10 mx-auto max-w-4xl text-center text-3xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
-          {currentContent.title
-            .split(" ")
-            .map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.1,
-                  ease: "easeInOut",
-                }}
-                className="mr-2 inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
+          {currentContent.title.split(" ").map((word, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{
+                duration: 0.3,
+                delay: index * 0.1,
+                ease: "easeInOut",
+              }}
+              className="mr-2 inline-block"
+            >
+              {word}
+            </motion.span>
+          ))}
         </h1>
         <motion.p
           initial={{
             opacity: 0,
+            filter: "blur(4px)",
+            y: 10,
           }}
           animate={{
             opacity: 1,
+            filter: "blur(0px)",
+            y: 0,
           }}
           transition={{
             duration: 0.3,
@@ -95,10 +100,7 @@ export default function HeroSectionOne() {
             </Button>
           </Link>
         </motion.div>
-
       </div>
     </div>
   );
 }
-
-
