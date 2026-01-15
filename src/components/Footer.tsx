@@ -57,6 +57,7 @@ export default function Footer() {
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">CUI 51196824</p>
                 <p className="text-gray-700 dark:text-gray-300">ROONRC. J20505646004</p>
+                <p className="text-gray-700 dark:text-gray-300"> Cont bancar: RO83BTRLRONCRT0CW7734901</p>
               </div>
             </div>
           </div>
