@@ -71,6 +71,19 @@ export default function AboutContent() {
         ]
       },
 
+      // Team Section
+      team: {
+        title: "Our team",
+        subtitle: "The people behind every project",
+        members: [
+          { name: "Marius Cozma", role: "Founder & CTO/CEO", email: "office@lagrangeengineering.ro", image: "/team/marius.jpeg" },
+          { name: "Andrei Barbu", role: "Co-Founder & CFO", email: "office@lagrangeengineering.ro", image: "/team/andrei.jpeg" },
+          { name: "Ionuț Suculiuc", role: "Frontend Engineer", email: "ionutsergiu23@gmail.com", image: "/team/ionut.jpeg" },
+          { name: "Marco Buga", role: "Engineering Associate", email: "bugamarco@yahoo.it", image: "/team/marco.jpeg" },
+          { name: "Iulia Bota", role: "Marketing & Sales", email: "biuliaalexis@gmail.com", image: "/team/iulia.jpeg" },
+        ]
+      },
+
       // CTA Section
       cta: {
         title: "Let's build something great together",
@@ -128,6 +141,19 @@ export default function AboutContent() {
           "Aduce valoare prin expertiză directă și consultanță tehnică",
           "Consolidează o reputație bazată pe fiabilitate și flexibilitate",
           "Răspunde echilibrat la provocări diverse"
+        ]
+      },
+
+      // Team Section
+      team: {
+        title: "Echipa noastră",
+        subtitle: "Oamenii din spatele fiecărui proiect",
+        members: [
+          { name: "Marius Cozma", role: "Fondator & CTO/CEO", email: "office@lagrangeengineering.ro", image: "/team/marius.jpeg" },
+          { name: "Andrei Barbu", role: "Co-Fondator & CFO", email: "office@lagrangeengineering.ro", image: "/team/andrei.jpeg" },
+          { name: "Ionuț Suculiuc", role: "Inginer Frontend", email: "ionutsergiu23@gmail.com", image: "/team/ionut.jpeg" },
+          { name: "Marco Buga", role: "Asociat Inginerie", email: "bugamarco@yahoo.it", image: "/team/marco.jpeg" },
+          { name: "Iulia Bota", role: "Marketing & Vânzări", email: "biuliaalexis@gmail.com", image: "/team/iulia.jpeg" },
         ]
       },
 
@@ -348,6 +374,64 @@ export default function AboutContent() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-slate-300 mb-4">
+              {currentContent.team.title}
+            </h2>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+              {currentContent.team.subtitle}
+            </p>
+          </motion.div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {currentContent.team.members.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-28 h-28 rounded-full mx-auto mb-4 relative overflow-hidden bg-emerald-100 dark:bg-emerald-900/30">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-emerald-600 dark:text-emerald-400 font-medium mb-2">
+                      {member.role}
+                    </p>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="text-xs text-neutral-500 dark:text-neutral-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-center gap-1"
+                    >
+                      <Mail className="w-3 h-3" />
+                      {member.email}
+                    </a>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

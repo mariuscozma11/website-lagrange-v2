@@ -16,17 +16,17 @@ const contentByLang: Record<SupportedLanguage, {
   openGraphDescription: string;
 }> = {
   en: {
-    title: "Portfolio - Lagrange Engineering | Projects and Work Completed",
+    title: "Portfolio - Lagrange Engineering | Projects and work completed",
     description: "Explore our portfolio of web projects and custom applications. Lagrange Engineering has created digital solutions for various companies in Romania.",
     keywords: "portfolio web projects, applications completed, Lagrange Engineering work, technology projects Romania",
-    openGraphTitle: "Portfolio - Lagrange Engineering | Projects and Work Completed",
+    openGraphTitle: "Portfolio - Lagrange Engineering | Projects and work completed",
     openGraphDescription: "Explore our portfolio of web projects and custom applications. Lagrange Engineering has created digital solutions for various companies in Romania.",
   },
   ro: {
-    title: "Portofoliu - Lagrange Engineering | Proiecte și Lucrări Realizate",
+    title: "Portofoliu - Lagrange Engineering | Proiecte și lucrări realizate",
     description: "Explorează portofoliul nostru de proiecte web și aplicații personalizate. Lagrange Engineering a realizat soluții digitale pentru diverse companii din România.",
     keywords: "portofoliu proiecte web, aplicații realizate, lucrări Lagrange Engineering, proiecte tehnologie România",
-    openGraphTitle: "Portofoliu - Lagrange Engineering | Proiecte și Lucrări Realizate",
+    openGraphTitle: "Portofoliu - Lagrange Engineering | Proiecte și lucrări realizate",
     openGraphDescription: "Explorează portofoliul nostru de proiecte web și aplicații personalizate. Lagrange Engineering a realizat soluții digitale pentru diverse companii din România.",
   },
 };
@@ -66,8 +66,8 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
     <div className="min-h-screen">
       <PageHeader
         title={{
-          en: "Our Portfolio",
-          ro: "Portofoliul Nostru"
+          en: "Our portfolio",
+          ro: "Portofoliul nostru"
         }}
         subtitle={{
           en: "Explore our completed projects and discover how we've helped businesses achieve their digital goals.",

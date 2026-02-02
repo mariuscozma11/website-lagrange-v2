@@ -54,3 +54,5 @@ Website: htttps://www.lagrangeengineering.ro
 ## Aplicatii Desktop
 
 Ceva cu demo
+
+Vreau sa imi planuiesc activitatea afacerii pe anul asta cu o crestere sanatoasa, reusind sa imi platesc un salariu de macar 7000 de lei lunar(sau sa scot dividende daca e mai convenabil, inca nu m-am angajat pe firma, lucrez ca administrator), sa deschid doua fonduri de investitii in care sa bag 1000 de lei lunar in fiecare(unul pentru sediu iar celalalt pentru masina firmei). Outputul principal pe care vreau sa il calculez este cate proiecte am nevoie sa iau si ce suma sa fie proiectele Dar in principal as vrea sa stiu conventiile folosite in afaceri pentru astfel de planuri. Firma este de custom software development si servciile sunt: Website-uri & Platforme Web Aplicații Web & SaaS Aplicații Cross-Platform & Mobile Digitalizare & Automatizare.

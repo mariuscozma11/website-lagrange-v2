@@ -24,7 +24,6 @@ import {
   Monitor,
   Smartphone,
   Settings,
-  BarChart3,
   ZoomIn,
   ExternalLink,
 } from "lucide-react";
@@ -84,13 +83,6 @@ export default function PortfolioContent() {
       // Current Projects
       projects: mapProjectsToDisplay("en"),
 
-      // Coming Soon Section
-      growth: {
-        title: "Growing portfolio",
-        description:
-          "We're constantly working on new projects and expanding our portfolio. Check back soon for more completed work and case studies.",
-      },
-
       // CTA Section
       cta: {
         title: "Let's build something together",
@@ -109,13 +101,6 @@ export default function PortfolioContent() {
 
       // Current Projects
       projects: mapProjectsToDisplay("ro"),
-
-      // Coming Soon Section
-      growth: {
-        title: "Portofoliu în creștere",
-        description:
-          "Lucrăm constant la proiecte noi și extindem portofoliul nostru. Revino în curând pentru mai multe lucrări finalizate și studii de caz.",
-      },
 
       // CTA Section
       cta: {
@@ -296,30 +281,6 @@ export default function PortfolioContent() {
               <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 sm:-left-12 md:-left-16" />
               <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 sm:-right-12 md:-right-16" />
             </Carousel>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Growing Portfolio Section */}
-      <section className="py-16 px-6 bg-neutral-50 dark:bg-neutral-900/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
-              <CardContent className="p-8">
-                <BarChart3 className="w-12 h-12 text-emerald-600 dark:text-emerald-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-slate-700 dark:text-slate-300 mb-4">
-                  {currentContent.growth.title}
-                </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  {currentContent.growth.description}
-                </p>
-              </CardContent>
-            </Card>
           </motion.div>
         </div>
       </section>

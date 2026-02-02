@@ -18,12 +18,16 @@ export interface Project {
 }
 
 const ids = {
-    medis:1,
-    novaworks: 2,
-    corox: 3,
-    anaf: 6,
-    handlyze: 5,
-    mechafusion: 4
+    medis: 1,
+    corox: 2,
+    dkat: 3,
+    hazzard: 4,
+    cumcomunic: 5,
+    cliniva: 6,
+    novaworks: 7,
+    anaf: 8,
+    mechafusion: 9,
+    handlyze: 10
 };
 export const projects: Project[] = [
   // Completed Projects / Proiecte Finalizate
@@ -49,56 +53,88 @@ export const projects: Project[] = [
     liveUrl: "https://coroxengineering.ro",
   },
   {
-    id: ids.mechafusion,
-    titleRo: "Website Mechafusion UPT",
-    titleEn: "Mechafusion UPT Website",
+    id: ids.dkat,
+    titleRo: "Website D-KAT Tour",
+    titleEn: "D-KAT Tour Website",
     category: "web",
     shortDescriptionRo:
-      "Website oficial pentru clubul de robotică al Universității Politehnica Timișoara.",
+      "Website de prezentare pentru experiențe auto de lux cu supercar-uri, organizare rally-uri și tururi exclusive.",
     shortDescriptionEn:
-      "Official website for the robotics club of Universitatea Politehnica Timișoara.",
+      "Showcase website for luxury automotive experiences with supercars, rally organization, and exclusive tours.",
     longDescriptionRo:
-      "Website modern și captivant pentru Mechafusion, clubul oficial de robotică al Universității Politehnica Timișoara. Include prezentarea proiectelor, profiluri membri, anunțuri evenimente, rezultate competiții și informații recrutare. Construit cu focus pe prezentarea proiectelor inovatoare de robotică și promovarea implicării în comunitatea studenților ingineri.",
+      "Website elegant de prezentare pentru D-KAT Tour, o companie care organizează experiențe auto exclusive cu supercar-uri și vehicule exotice. Platforma prezintă flota de vehicule disponibile, inclusiv Porsche 911 Turbo S, Lamborghini Huracán, Ferrari SF90 și Rolls-Royce Dawn. Include galerie foto, sistem de parteneriate, pagină de înscriere și secțiune de contact. Design-ul reflectă poziționarea premium a brandului, targetând pasionații auto și clienții interesați de experiențe de lux.",
     longDescriptionEn:
-      "Modern and engaging website for Mechafusion, the official robotics club of Universitatea Politehnica Timișoara. Features include project showcases, member profiles, event announcements, competition results, and recruitment information. Built with a focus on showcasing innovative robotics projects and fostering community engagement among engineering students.",
-    technologies: ["HTML", "JavaScript", "TailwindCSS", "AWS S3", "Cloudflare"],
+      "Elegant showcase website for D-KAT Tour, a company organizing exclusive automotive experiences with supercars and exotic vehicles. The platform showcases the available vehicle fleet, including Porsche 911 Turbo S, Lamborghini Huracán, Ferrari SF90, and Rolls-Royce Dawn. Features include photo gallery, partnership system, registration page, and contact section. The design reflects the brand's premium positioning, targeting automotive enthusiasts and clients interested in luxury experiences.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     statusRo: "Finalizat",
     statusEn: "Completed",
-    typeRo: "Website Organizație",
-    typeEn: "Organization Website",
-    featuredImage: "/portfolio/mechafusion-featured.webp",
-    liveUrl: "https://www.clubrobotica.upt.ro/",
-    gallery: [
-      "/portfolio/mechafusion-1.jpg",
-      "/portfolio/mechafusion-2.jpg",
-      "/portfolio/mechafusion-3.jpg",
-      "/portfolio/mechafusion-4.jpg",
-    ],
+    typeRo: "Website Prezentare",
+    typeEn: "Showcase Website",
+    featuredImage: "/dkat.png",
+    liveUrl: "http://d-kat.com/",
   },
   {
-    id: ids.anaf,
-    titleRo: "Aplicație Comparare SAGA-ANAF",
-    titleEn: "SAGA-ANAF Comparison Tool",
+    id: ids.hazzard,
+    titleRo: "Website Hazzard Studio",
+    titleEn: "Hazzard Studio Website",
     category: "web",
     shortDescriptionRo:
-      "Aplicație web pentru compararea datelor export SAGA cu facturile CSV oficiale ANAF.",
+      "Website modern pentru salon de frizerie din Timișoara, cu prezentare servicii și integrare programări.",
     shortDescriptionEn:
-      "Web application for comparing SAGA export data with ANAF official CSV invoices.",
+      "Modern website for a barbershop in Timișoara, featuring service showcase and booking integration.",
     longDescriptionRo:
-      "Aplicație web specializată dezvoltată pentru profesioniștii contabili pentru compararea eficientă a datelor Excel exportate din software-ul de contabilitate SAGA cu tabelele oficiale CSV de facturi de la ANAF. Include parsare automată de date, algoritmi inteligenți de potrivire, detectare discrepanțe, raportare detaliată și capabilități export. Eficientizează procesul de reconciliere și asigură acuratețea în raportarea fiscală.",
+      "Website profesional pentru Hazzard Studio, un salon modern de frizerie din Timișoara. Platforma include prezentarea serviciilor de tuns, aranjat barbă și mustață, galerie foto cu lucrări realizate, profiluri ale friserilor, program de funcționare și integrare cu aplicație mobilă pentru programări. Design-ul modern și curat reflectă identitatea brandului, cu focus pe experiența utilizatorului și conversie clienți noi.",
     longDescriptionEn:
-      "Specialized web application developed for accounting professionals to efficiently compare Excel data exported from SAGA accounting software with official CSV invoice tables from ANAF (Romanian tax authority). Features include automated data parsing, intelligent matching algorithms, discrepancy detection, detailed reporting, and export capabilities. Streamlines the reconciliation process and ensures accuracy in tax reporting.",
-    technologies: ["Next.js", "Excel.js", "CSV Parser"],
+      "Professional website for Hazzard Studio, a modern barbershop in Timișoara. The platform includes service presentation for haircuts, beard and mustache grooming, photo gallery of completed work, barber profiles, operating hours, and mobile app integration for bookings. The modern and clean design reflects the brand identity, with a focus on user experience and new client conversion.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     statusRo: "Finalizat",
     statusEn: "Completed",
-    typeRo: "Instrument Business",
-    typeEn: "Business Tool",
-    featuredImage: "/portfolio/saga-anaf-featured.webp",
-    gallery: [
-      "/portfolio/saga-anaf-1.jpg",
-      "/portfolio/saga-anaf-2.jpg",
-      "/portfolio/saga-anaf-3.jpg",
-    ],
+    typeRo: "Website Servicii",
+    typeEn: "Service Website",
+    featuredImage: "/hazzard.png",
+    liveUrl: "http://hazzardstudio.ro/",
+  },
+  {
+    id: ids.cumcomunic,
+    titleRo: "Website Cum Comunic - Consiliere Relațională",
+    titleEn: "Cum Comunic - Relational Counseling Website",
+    category: "web",
+    shortDescriptionRo:
+      "Website de prezentare pentru consilier relațional și formator acreditat în Metoda ESPERE, Timișoara.",
+    shortDescriptionEn:
+      "Showcase website for a relational counselor and accredited trainer in the ESPERE Method, Timișoara.",
+    longDescriptionRo:
+      "Website profesional pentru Liliana Enculescu, consilier relațional și formator acreditat în Metoda ESPERE, cu peste 20 de ani de experiență și peste 13.000 de clienți. Platforma prezintă serviciile de consiliere pentru relații de cuplu, părinte-copil, relații profesionale, relația educator-elev, relația profesionist sănătate-pacient și relația cu sine. Include secțiuni pentru testimoniale, FAQ, programare consultații și prezentare detaliată a metodologiei ESPERE.",
+    longDescriptionEn:
+      "Professional website for Liliana Enculescu, a relational counselor and accredited trainer in the ESPERE Method, with over 20 years of experience and 13,000+ clients. The platform presents counseling services for couple relationships, parent-child dynamics, workplace relationships, educator-student relations, healthcare professional-patient communication, and self-relationship. Includes sections for testimonials, FAQ, consultation booking, and detailed presentation of the ESPERE methodology.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "SEO"],
+    statusRo: "Finalizat",
+    statusEn: "Completed",
+    typeRo: "Website Prezentare",
+    typeEn: "Showcase Website",
+    featuredImage: "/cumcomunic.png",
+    liveUrl: "http://cumcomunic.ro/",
+  },
+  {
+    id: ids.cliniva,
+    titleRo: "Website Cliniva - Centru Medical",
+    titleEn: "Cliniva - Medical Center Website",
+    category: "web",
+    shortDescriptionRo:
+      "Website pentru centru medical de recuperare și wellness din Timișoara, cu prezentare servicii și programări online.",
+    shortDescriptionEn:
+      "Website for a medical recovery and wellness center in Timișoara, with service showcase and online booking.",
+    longDescriptionRo:
+      "Website complet pentru Cliniva, un centru medical modern de recuperare și wellness din Timișoara, cu tradiție din 1993. Platforma prezintă gama completă de servicii medicale: ortopedie, fizioterapie (terapie TECAR, laser, ultrasunet, magnetoterapie), kinetoterapie, chiropractică, masaj terapeutic, medicină internă și psihologie. Include profiluri ale echipei medicale, testimoniale pacienți, sistem de programări online și informații despre decontare CNAS.",
+    longDescriptionEn:
+      "Complete website for Cliniva, a modern medical recovery and wellness center in Timișoara, with a tradition dating back to 1993. The platform showcases the full range of medical services: orthopedics, physical therapy (TECAR therapy, laser, ultrasound, magnetotherapy), kinesiotherapy, chiropractic, therapeutic massage, internal medicine, and psychology. Includes medical team profiles, patient testimonials, online booking system, and CNAS insurance coverage information.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "SEO"],
+    statusRo: "Finalizat",
+    statusEn: "Completed",
+    typeRo: "Website Medical",
+    typeEn: "Medical Website",
+    featuredImage: "/cliniva.png",
+    liveUrl: "http://cliniva.ro/",
   },
 
   {
@@ -131,26 +167,6 @@ export const projects: Project[] = [
     gallery: ["/medis2.png", "/medis3.png"],
   },
   {
-    id: ids.handlyze,
-    titleRo: "Handlyze - Analiză Handbal",
-    titleEn: "Handlyze - Handball Analytics",
-    category: "mobile",
-    shortDescriptionRo:
-      "Aplicație cross-platform statistici handbal pentru cluburile românești cu analiză detaliată jucători.",
-    shortDescriptionEn:
-      "Cross-platform handball statistics app for Romanian clubs with detailed player analytics.",
-    longDescriptionRo:
-      "Platformă avansată de statistici și analiză handbal destinată cluburilor românești de handbal. Oferă urmărire comprehensivă performanță jucători, statistici meciuri, analiză echipă, tendințe performanță, analiză comparativă și raportare detaliată. Include scoring meciuri în timp real, urmărire dezvoltare jucători, monitorizare accidentări, management încărcare antrenament și instrumente analiză strategică. Ajută antrenorii să ia decizii bazate pe date și să îmbunătățească performanța echipei.",
-    longDescriptionEn:
-      "Advanced handball statistics and analytics platform designed for Romanian handball clubs. Provides comprehensive player performance tracking, match statistics, team analytics, performance trends, comparative analysis, and detailed reporting. Features include real-time match scoring, player development tracking, injury monitoring, training load management, and strategic analysis tools. Helps coaches make data-driven decisions and improve team performance.",
-    technologies: ["React Native", "Supabase", "Video Analytics", "Charts.js"],
-    statusRo: "În dezvoltare",
-    statusEn: "In Development",
-    typeRo: "Aplicație Analiză Sport",
-    typeEn: "Sports Analytics App",
-    featuredImage: "/portfolio/handlyze-featured.webp",
-  },
-  {
     id: ids.novaworks,
     titleRo: "Platformă Shop Printare 3D",
     titleEn: "3D Printing Shop Platform",
@@ -175,6 +191,79 @@ export const projects: Project[] = [
     statusEn: "In Development",
     typeRo: "Platformă E-commerce",
     typeEn: "E-commerce Platform",
-    featuredImage: "/portfolio/3dprinting-featured.webp",
+    featuredImage: "/novaworks.png",
+    liveUrl: "https://novaworks.ro",
+  },
+  {
+    id: ids.anaf,
+    titleRo: "Aplicație Comparare SAGA-ANAF",
+    titleEn: "SAGA-ANAF Comparison Tool",
+    category: "web",
+    shortDescriptionRo:
+      "Aplicație web pentru compararea datelor export SAGA cu facturile CSV oficiale ANAF.",
+    shortDescriptionEn:
+      "Web application for comparing SAGA export data with ANAF official CSV invoices.",
+    longDescriptionRo:
+      "Aplicație web specializată dezvoltată pentru profesioniștii contabili pentru compararea eficientă a datelor Excel exportate din software-ul de contabilitate SAGA cu tabelele oficiale CSV de facturi de la ANAF. Include parsare automată de date, algoritmi inteligenți de potrivire, detectare discrepanțe, raportare detaliată și capabilități export. Eficientizează procesul de reconciliere și asigură acuratețea în raportarea fiscală.",
+    longDescriptionEn:
+      "Specialized web application developed for accounting professionals to efficiently compare Excel data exported from SAGA accounting software with official CSV invoice tables from ANAF (Romanian tax authority). Features include automated data parsing, intelligent matching algorithms, discrepancy detection, detailed reporting, and export capabilities. Streamlines the reconciliation process and ensures accuracy in tax reporting.",
+    technologies: ["Next.js", "Excel.js", "CSV Parser"],
+    statusRo: "Finalizat",
+    statusEn: "Completed",
+    typeRo: "Instrument Business",
+    typeEn: "Business Tool",
+    featuredImage: "/portfolio/saga-anaf-featured.webp",
+    gallery: [
+      "/portfolio/saga-anaf-1.jpg",
+      "/portfolio/saga-anaf-2.jpg",
+      "/portfolio/saga-anaf-3.jpg",
+    ],
+  },
+  {
+    id: ids.mechafusion,
+    titleRo: "Website Mechafusion UPT",
+    titleEn: "Mechafusion UPT Website",
+    category: "web",
+    shortDescriptionRo:
+      "Website oficial pentru clubul de robotică al Universității Politehnica Timișoara.",
+    shortDescriptionEn:
+      "Official website for the robotics club of Universitatea Politehnica Timișoara.",
+    longDescriptionRo:
+      "Website modern și captivant pentru Mechafusion, clubul oficial de robotică al Universității Politehnica Timișoara. Include prezentarea proiectelor, profiluri membri, anunțuri evenimente, rezultate competiții și informații recrutare. Construit cu focus pe prezentarea proiectelor inovatoare de robotică și promovarea implicării în comunitatea studenților ingineri.",
+    longDescriptionEn:
+      "Modern and engaging website for Mechafusion, the official robotics club of Universitatea Politehnica Timișoara. Features include project showcases, member profiles, event announcements, competition results, and recruitment information. Built with a focus on showcasing innovative robotics projects and fostering community engagement among engineering students.",
+    technologies: ["HTML", "JavaScript", "TailwindCSS", "AWS S3", "Cloudflare"],
+    statusRo: "Finalizat",
+    statusEn: "Completed",
+    typeRo: "Website Organizație",
+    typeEn: "Organization Website",
+    featuredImage: "/portfolio/mechafusion-featured.webp",
+    liveUrl: "https://www.clubrobotica.upt.ro/",
+    gallery: [
+      "/portfolio/mechafusion-1.jpg",
+      "/portfolio/mechafusion-2.jpg",
+      "/portfolio/mechafusion-3.jpg",
+      "/portfolio/mechafusion-4.jpg",
+    ],
+  },
+  {
+    id: ids.handlyze,
+    titleRo: "Handlyze - Analiză Handbal",
+    titleEn: "Handlyze - Handball Analytics",
+    category: "mobile",
+    shortDescriptionRo:
+      "Aplicație cross-platform statistici handbal pentru cluburile românești cu analiză detaliată jucători.",
+    shortDescriptionEn:
+      "Cross-platform handball statistics app for Romanian clubs with detailed player analytics.",
+    longDescriptionRo:
+      "Platformă avansată de statistici și analiză handbal destinată cluburilor românești de handbal. Oferă urmărire comprehensivă performanță jucători, statistici meciuri, analiză echipă, tendințe performanță, analiză comparativă și raportare detaliată. Include scoring meciuri în timp real, urmărire dezvoltare jucători, monitorizare accidentări, management încărcare antrenament și instrumente analiză strategică. Ajută antrenorii să ia decizii bazate pe date și să îmbunătățească performanța echipei.",
+    longDescriptionEn:
+      "Advanced handball statistics and analytics platform designed for Romanian handball clubs. Provides comprehensive player performance tracking, match statistics, team analytics, performance trends, comparative analysis, and detailed reporting. Features include real-time match scoring, player development tracking, injury monitoring, training load management, and strategic analysis tools. Helps coaches make data-driven decisions and improve team performance.",
+    technologies: ["React Native", "Supabase", "Video Analytics", "Charts.js"],
+    statusRo: "În dezvoltare",
+    statusEn: "In Development",
+    typeRo: "Aplicație Analiză Sport",
+    typeEn: "Sports Analytics App",
+    featuredImage: "/portfolio/handlyze-featured.webp",
   },
 ];
