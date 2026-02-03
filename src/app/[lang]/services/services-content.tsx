@@ -26,21 +26,18 @@ interface Service {
 // Service illustrations component
 const ServiceIllustration = ({ service }: { service: Service }) => {
   const IconComponent = service.icon;
-  
-  return (
-    <div className="flex items-center justify-center h-96 lg:h-[500px] relative">
-      {service.illustration ? (
-        // Use custom SVG illustration if provided
-        <Image 
-          src={service.illustration} 
-          alt={service.title}
-          fill
-          className="object-contain"
-        />
-      ) : (
-        // Use icon component as fallback
-        <IconComponent className="w-32 h-32 text-emerald-600 dark:text-emerald-400" />
-      )}
+
+  return service.illustration ? (
+    <Image
+      src={service.illustration}
+      alt={service.title}
+      width={400}
+      height={300}
+      className="w-full h-auto"
+    />
+  ) : (
+    <div className="flex items-center justify-center py-8">
+      <IconComponent className="w-24 h-24 text-emerald-600 dark:text-emerald-400" />
     </div>
   );
 };
@@ -202,12 +199,10 @@ export default function ServicesContent() {
   const currentContent = servicesContent[currentLang] || servicesContent.ro;
   
   return (
-    <section className="py-20">
+    <section className="py-8">
       <div className="container mx-auto px-6 max-w-7xl">
-      
-
         {/* Services with alternating layout */}
-        <div className="space-y-24">
+        <div className="space-y-8">
           {currentContent.services.map((service, index) => {
             const isEven = index % 2 === 0;
             const IconComponent = service.icon;
@@ -225,7 +220,7 @@ export default function ServicesContent() {
                   }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`flex flex-col lg:flex-row items-center gap-12 ${
+                  className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
                     isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                   }`}
                 >
@@ -288,7 +283,7 @@ export default function ServicesContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-20 text-center"
+          className="mt-8 text-center"
         >
           <Card className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white border-0">
             <CardContent className="py-12">

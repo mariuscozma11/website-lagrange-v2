@@ -174,14 +174,14 @@ export default function AboutContent() {
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-950">
       {/* Mission Section */}
-      <section className="py-24 px-6">
+      <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col lg:flex-row items-center gap-12"
+            className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
           >
             {/* Content */}
             <div className="flex-1 space-y-6">
@@ -204,30 +204,29 @@ export default function AboutContent() {
             </div>
             {/* Illustration */}
             <div className="flex-1">
-              <div className="flex items-center justify-center h-96 lg:h-[400px] relative">
-                <Image 
-                  src="/misiune.svg" 
-                  alt={currentContent.mission.title}
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <Image
+                src="/misiune.svg"
+                alt={currentContent.mission.title}
+                width={400}
+                height={300}
+                className="w-full h-auto"
+              />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900/50">
+      <section className="py-8 px-6 bg-neutral-50 dark:bg-neutral-900/50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-slate-300 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-slate-300 mb-2">
               {currentContent.values.title}
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
@@ -269,14 +268,14 @@ export default function AboutContent() {
       </section>
 
       {/* Positioning Section */}
-      <section className="py-24 px-6">
+      <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col lg:flex-row-reverse items-center gap-12"
+            className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12"
           >
             {/* Content */}
             <div className="flex-1 space-y-6">
@@ -301,28 +300,27 @@ export default function AboutContent() {
             </div>
             {/* Illustration */}
             <div className="flex-1">
-              <div className="flex items-center justify-center h-96 lg:h-[400px] relative">
-                <Image 
-                  src="/abordare.svg" 
-                  alt={currentContent.positioning.title}
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <Image
+                src="/abordare.svg"
+                alt={currentContent.positioning.title}
+                width={400}
+                height={300}
+                className="w-full h-auto"
+              />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Vision Section */}
-      <section className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900/50">
+      <section className="py-8 px-6 bg-neutral-50 dark:bg-neutral-900/50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col lg:flex-row items-center gap-12"
+            className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
           >
             {/* Content */}
             <div className="flex-1 space-y-6">
@@ -364,30 +362,29 @@ export default function AboutContent() {
             </div>
             {/* Illustration */}
             <div className="flex-1">
-              <div className="flex items-center justify-center h-96 lg:h-[400px] relative">
-                <Image 
-                  src="/obiective.svg" 
-                  alt={currentContent.vision.title}
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <Image
+                src="/obiective.svg"
+                alt={currentContent.vision.title}
+                width={400}
+                height={300}
+                className="w-full h-auto"
+              />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-24 px-6">
+      <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-slate-300 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-slate-300 mb-2">
               {currentContent.team.title}
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
@@ -436,7 +433,7 @@ export default function AboutContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900/50">
+      <section className="py-8 px-6 bg-neutral-50 dark:bg-neutral-900/50">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -445,8 +442,8 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-700 dark:text-slate-300 mb-6">
+            <div className="mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-700 dark:text-slate-300 mb-3">
                 {currentContent.cta.title}
               </h2>
               <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
@@ -454,7 +451,7 @@ export default function AboutContent() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:gap-6 md:grid-cols-2 mb-12">
+            <div className="grid gap-6 md:grid-cols-2 mb-6">
               {/* Primary CTA Card */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
