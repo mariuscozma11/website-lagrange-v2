@@ -36,7 +36,6 @@ interface DisplayProject {
   category: string;
   shortDescription: string;
   longDescription: string;
-  technologies: string[];
   status: string;
   type: string;
   featuredImage?: string;
@@ -61,7 +60,6 @@ export default function PortfolioContent() {
         lang === "en" ? project.shortDescriptionEn : project.shortDescriptionRo,
       longDescription:
         lang === "en" ? project.longDescriptionEn : project.longDescriptionRo,
-      technologies: project.technologies,
       status: lang === "en" ? project.statusEn : project.statusRo,
       type: lang === "en" ? project.typeEn : project.typeRo,
       featuredImage: project.featuredImage,
@@ -252,25 +250,6 @@ export default function PortfolioContent() {
                             <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                               {project.shortDescription}
                             </p>
-
-                            {/* Technologies */}
-                            <div className="flex flex-wrap gap-2">
-                              {project.technologies
-                                .slice(0, 4)
-                                .map((tech, techIndex) => (
-                                  <span
-                                    key={techIndex}
-                                    className="px-2 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 rounded"
-                                  >
-                                    {tech}
-                                  </span>
-                                ))}
-                              {project.technologies.length > 4 && (
-                                <span className="px-2 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 rounded">
-                                  +{project.technologies.length - 4}
-                                </span>
-                              )}
-                            </div>
                           </CardContent>
                         </Card>
                       </div>
@@ -363,24 +342,6 @@ export default function PortfolioContent() {
                       <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-base md:text-lg">
                         {selectedProject.longDescription}
                       </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-slate-700 dark:text-slate-300 mb-4">
-                        {currentLang === "en" ? "Technologies" : "Tehnologii"}
-                      </h3>
-                      <div className="flex flex-wrap gap-3">
-                        {selectedProject.technologies.map(
-                          (tech: string, index: number) => (
-                            <span
-                              key={index}
-                              className="px-4 py-2 text-sm md:text-base bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full font-medium"
-                            >
-                              {tech}
-                            </span>
-                          )
-                        )}
-                      </div>
                     </div>
                   </div>
 
